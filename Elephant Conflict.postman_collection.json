@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "19251165-1010-4a94-ab79-cb08656b6326",
+		"name": "Elephant Conflict",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13996575"
+	},
+	"item": [
+		{
+			"name": "Get All Nodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/nodes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"nodes"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8000/nodes"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Node",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/nodes/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"nodes",
+						"0"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8000/nodes/0"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Corridors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/corridors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"corridors"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8000/corridors"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Corridor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/corridors/6-7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"corridors",
+						"6-7"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8000/corridors/6-7"
+			},
+			"response": []
+		},
+		{
+			"name": "Predict Risk - Low Risk",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"latitude\": 6.9,\r\n    \"longitude\": 80.5,\r\n    \"datetime\": \"2024-07-15T12:00:00\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/predict_risk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"predict_risk"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/predict_risk \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"latitude\": 6.0,\r\n    \"longitude\": 80.5,\r\n    \"datetime\": \"2024-12-20T12:00:00\",\r\n    \"human_distance\": 5000,\r\n    \"road_distance\": 3000,\r\n    \"elevation\": 100\r\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "Predict Risk - Medium Risk",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"latitude\": 6.525,\r\n    \"longitude\": 81.345,\r\n    \"datetime\": \"2024-06-15T14:00:00\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/predict_risk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"predict_risk"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/predict_risk \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"latitude\": 7.95,\r\n    \"longitude\": 80.55,\r\n    \"datetime\": \"2024-12-20T22:00:00\",\r\n    \"human_distance\": 500,\r\n    \"road_distance\": 300,\r\n    \"elevation\": 100\r\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "Predict Risk - High Risk",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"latitude\": 6.515,\r\n    \"longitude\": 81.338,\r\n    \"datetime\": \"2024-01-15T22:00:00\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/predict_risk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"predict_risk"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/predict_risk \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"latitude\": 6.225,\r\n    \"longitude\": 81.100,\r\n    \"datetime\": \"2024-12-20T20:00:00\",\r\n    \"human_distance\": 800,\r\n    \"road_distance\": 500,\r\n    \"elevation\": 100\r\n  }'"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

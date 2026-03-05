@@ -1,0 +1,124 @@
+{
+  "accuracy": 0.992131720821798,
+  "roc_auc": 0.9994692230920736,
+  "classification_report": {
+    "0": {
+      "precision": 0.993859649122807,
+      "recall": 0.9903846153846154,
+      "f1-score": 0.9921190893169878,
+      "support": 3432.0
+    },
+    "1": {
+      "precision": 0.9904153354632588,
+      "recall": 0.9938793354707083,
+      "f1-score": 0.9921443118999127,
+      "support": 3431.0
+    },
+    "accuracy": 0.992131720821798,
+    "macro avg": {
+      "precision": 0.9921374922930328,
+      "recall": 0.9921319754276618,
+      "f1-score": 0.9921317006084502,
+      "support": 6863.0
+    },
+    "weighted avg": {
+      "precision": 0.9921377432265648,
+      "recall": 0.992131720821798,
+      "f1-score": 0.9921316987708731,
+      "support": 6863.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      3399,
+      33
+    ],
+    [
+      21,
+      3410
+    ]
+  ],
+  "feature_importance": [
+    {
+      "feature": "Season_encoded",
+      "importance": 0.7009743452072144
+    },
+    {
+      "feature": "Elevation",
+      "importance": 0.050730325281620026
+    },
+    {
+      "feature": "WaterDistance",
+      "importance": 0.041705597192049026
+    },
+    {
+      "feature": "LC_40.0",
+      "importance": 0.04088897630572319
+    },
+    {
+      "feature": "HumanDistance",
+      "importance": 0.035074979066848755
+    },
+    {
+      "feature": "RoadDistance",
+      "importance": 0.0244398582726717
+    },
+    {
+      "feature": "Protected",
+      "importance": 0.021693337708711624
+    },
+    {
+      "feature": "NDVI_normalized",
+      "importance": 0.02099405974149704
+    },
+    {
+      "feature": "LC_30.0",
+      "importance": 0.01566403917968273
+    },
+    {
+      "feature": "Month",
+      "importance": 0.01109600905328989
+    },
+    {
+      "feature": "LC_80.0",
+      "importance": 0.007674851920455694
+    },
+    {
+      "feature": "LC_60.0",
+      "importance": 0.007265797350555658
+    },
+    {
+      "feature": "LC_10.0",
+      "importance": 0.006317669991403818
+    },
+    {
+      "feature": "DayOfWeek",
+      "importance": 0.005165637005120516
+    },
+    {
+      "feature": "LC_20.0",
+      "importance": 0.00435674749314785
+    },
+    {
+      "feature": "Hour",
+      "importance": 0.003287562867626548
+    },
+    {
+      "feature": "TimeOfDay_encoded",
+      "importance": 0.0026701900642365217
+    },
+    {
+      "feature": "LC_90.0",
+      "importance": 0.0
+    },
+    {
+      "feature": "LC_50.0",
+      "importance": 0.0
+    }
+  ],
+  "notes": {
+    "DistanceToNearestNode": "EXCLUDED from training (data leakage)",
+    "LandCover": "One-hot encoded",
+    "Scaling": "Not applied (XGBoost)"
+  }
+}

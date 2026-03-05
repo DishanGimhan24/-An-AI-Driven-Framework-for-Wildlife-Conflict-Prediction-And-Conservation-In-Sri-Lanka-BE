@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "19251165-1010-4a94-ab79-cb08656b6326",
+		"name": "Elephant Conflict",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13996575"
+	},
+	"item": [
+		{
+			"name": "High Risk Predict",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"latitude\": 7.5,\r\n  \"longitude\": 81.0,\r\n  \"datetime\": \"2024-12-20T20:30:00\",\r\n  \"human_distance\": 350,\r\n  \"road_distance\": 600,\r\n  \"elevation\": 120\r\n  }\r\n\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/predict",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"predict"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/predict \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"latitude\": 7.5,\r\n    \"longitude\": 81.0,\r\n    \"HumanDistance\": 300,\r\n    \"RoadDistance\": 1000,\r\n    \"WaterDistance\": 500,\r\n    \"Hour\": 20,\r\n    \"Protected\": 0,\r\n    \"Season\": \"Southwest-Monsoon\",\r\n    \"TimeOfDay\": \"Evening\",\r\n    \"LandCover2\": 30.0,\r\n    \"Elevation\": 100,\r\n    \"NDVI_normalized\": 0.7,\r\n    \"Year\": 2024,\r\n    \"Month\": 6,\r\n    \"Day\": 15,\r\n    \"DayOfWeek\": 3\r\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "Critical Risk Predict",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"latitude\": 7.5,\r\n    \"longitude\": 81.0,\r\n    \"datetime\": \"2024-12-20T02:00:00\",\r\n    \"human_distance\": 150,\r\n    \"road_distance\": 300,\r\n    \"elevation\": 80\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/predict",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"predict"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/predict \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"latitude\": 7.5,\r\n    \"longitude\": 81.0,\r\n    \"HumanDistance\": 300,\r\n    \"RoadDistance\": 1000,\r\n    \"WaterDistance\": 500,\r\n    \"Hour\": 20,\r\n    \"Protected\": 0,\r\n    \"Season\": \"Southwest-Monsoon\",\r\n    \"TimeOfDay\": \"Evening\",\r\n    \"LandCover2\": 30.0,\r\n    \"Elevation\": 100,\r\n    \"NDVI_normalized\": 0.7,\r\n    \"Year\": 2024,\r\n    \"Month\": 6,\r\n    \"Day\": 15,\r\n    \"DayOfWeek\": 3\r\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "Low Risk Predict",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"latitude\": 7.5,\r\n    \"longitude\": 81.0,\r\n    \"datetime\": \"2024-12-20T12:30:00\",\r\n    \"human_distance\": 5000,\r\n    \"road_distance\": 4000,\r\n    \"elevation\": 300\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/predict",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"predict"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/predict \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"latitude\": 7.5,\r\n    \"longitude\": 81.0,\r\n    \"HumanDistance\": 300,\r\n    \"RoadDistance\": 1000,\r\n    \"WaterDistance\": 500,\r\n    \"Hour\": 20,\r\n    \"Protected\": 0,\r\n    \"Season\": \"Southwest-Monsoon\",\r\n    \"TimeOfDay\": \"Evening\",\r\n    \"LandCover2\": 30.0,\r\n    \"Elevation\": 100,\r\n    \"NDVI_normalized\": 0.7,\r\n    \"Year\": 2024,\r\n    \"Month\": 6,\r\n    \"Day\": 15,\r\n    \"DayOfWeek\": 3\r\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"health"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8000/health"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Corridors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/corridors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"corridors"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8000/corridors"
+			},
+			"response": []
+		},
+		{
+			"name": "Corridor Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/corridors/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"corridors",
+						"0"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8000/corridors/0"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
