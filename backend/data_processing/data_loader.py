@@ -70,10 +70,12 @@ class DataLoader:
         """Load protected areas shapefiles"""
         # Try multiple possible shapefile names
         possible_files = [
+            'WDPA_WDOECM_Dec2025_Public_LKA_shp-polygons.shp',
+            'WDPA_WDOECM_Dec2025_Public_LKA_shp-points.shp',
             'WDPA_WDOECM_Dec2025_Public_LKA_shp.shp',
             'WDPA_WDOECM_Dec2025_Public_LKA_shp_0.shp',
             'WDPA_WDOECM_Dec2025_Public_LKA_shp_1.shp',
-            'WDPA_WDOECM_Dec2025_Public_LKA_shp_2.shp'
+            'WDPA_WDOECM_Dec2025_Public_LKA_shp_2.shp',
         ]
 
         # Search in multiple possible subdirectories
