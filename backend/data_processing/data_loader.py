@@ -76,25 +76,28 @@ class DataLoader:
             'WDPA_WDOECM_Dec2025_Public_LKA_shp_2.shp'
         ]
 
-        # Look in Resources_in_English subfolder
-        search_dir = os.path.join(PROTECTED_AREAS_DIR, 'Resources_in_English')
+        # Search in multiple possible subdirectories
+        search_dirs = [
+            os.path.join(PROTECTED_AREAS_DIR, 'extracted'),
+            os.path.join(PROTECTED_AREAS_DIR, 'Resources_in_English'),
+            PROTECTED_AREAS_DIR,
+        ]
 
-        if not os.path.exists(search_dir):
-            search_dir = PROTECTED_AREAS_DIR
+        for search_dir in search_dirs:
+            for filename in possible_files:
+                shapefile_path = os.path.join(search_dir, filename)
+                if os.path.exists(shapefile_path):
+                    try:
+                        self.protected_areas = gpd.read_file(shapefile_path)
+                        # Standardize CRS to WGS84
+                        if self.protected_areas.crs != "EPSG:4326":
+                            self.protected_areas = self.protected_areas.to_crs("EPSG:4326")
+                        print(f"✓ Protected areas loaded from {shapefile_path}")
+                        return
+                    except Exception as e:
+                        print(f"⚠ Error loading {filename}: {e}")
 
-        for filename in possible_files:
-            shapefile_path = os.path.join(search_dir, filename)
-            if os.path.exists(shapefile_path):
-                try:
-                    self.protected_areas = gpd.read_file(shapefile_path)
-                    # Standardize CRS to WGS84
-                    if self.protected_areas.crs != "EPSG:4326":
-                        self.protected_areas = self.protected_areas.to_crs("EPSG:4326")
-                    return
-                except Exception as e:
-                    print(f"⚠ Error loading {filename}: {e}")
-
-        print(f"Protected areas shapefile not found in {search_dir}")
+        print(f"Protected areas shapefile not found in {PROTECTED_AREAS_DIR}")
 
     def load_power_fences(self):
         """Load power fence shapefiles from all provinces"""

@@ -80,6 +80,9 @@ if __name__ == '__main__':
     # Load all data before starting server
     data_loader.load_all()
 
+    # Load ML models before starting server
+    model_loader.load_models()
+
     # Run Flask app
     print(f"Starting Flask server on {FLASK_HOST}:{FLASK_PORT}")
     app.run(host=FLASK_HOST, port=FLASK_PORT, debug=DEBUG)
