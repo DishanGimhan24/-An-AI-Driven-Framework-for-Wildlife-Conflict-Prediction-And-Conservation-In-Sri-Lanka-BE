@@ -42,6 +42,26 @@ services:
       timeout: 10s
       retries: 3
 
+  # Service 3: Wildlife Conflict Prediction (Tharushi)
+  wildlife-conflict-service:
+    build:
+      context: ./Tharushi
+      dockerfile: Dockerfile
+    container_name: wildlife-conflict-service
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./Tharushi/models:/app/models
+      - ./Tharushi/Final Dataset:/app/Final Dataset
+    environment:
+      - SERVICE_NAME=wildlife-conflict-service
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   # API Gateway (optional) - routes requests to the correct service
   gateway:
     build:
@@ -53,7 +73,9 @@ services:
     depends_on:
       - corridor-service
       - collision-risk-service
+      - wildlife-conflict-service
     environment:
       - CORRIDOR_SERVICE_URL=http://corridor-service:8000
       - COLLISION_RISK_SERVICE_URL=http://collision-risk-service:8001
+      - WILDLIFE_CONFLICT_SERVICE_URL=http://wildlife-conflict-service:5001
     restart: unless-stopped

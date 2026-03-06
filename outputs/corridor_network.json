@@ -18,7 +18,7 @@
       "eps_km": 0.5,
       "min_samples": 5
     },
-    "generated_at": "2026-03-05 13:19:57.059080"
+    "generated_at": "2026-03-06 12:28:48.725262"
   },
   "nodes": [
     {
@@ -3248,8 +3248,8 @@
       "crossing_count": 21,
       "elephants": [
         "Mihiri",
-        "Samudra",
-        "Nancy"
+        "Nancy",
+        "Samudra"
       ],
       "active_hours": [
         16,
@@ -3587,8 +3587,8 @@
       "crossing_count": 10,
       "elephants": [
         "Mihiri",
-        "Samudra",
-        "Nancy"
+        "Nancy",
+        "Samudra"
       ],
       "active_hours": [
         20,
@@ -4019,8 +4019,8 @@
       "usage_count": 2,
       "crossing_count": 17,
       "elephants": [
-        "Sugala",
-        "Udani"
+        "Udani",
+        "Sugala"
       ],
       "active_hours": [
         20,
@@ -4782,8 +4782,8 @@
       "usage_count": 2,
       "crossing_count": 7,
       "elephants": [
-        "Sugala",
-        "Udani"
+        "Udani",
+        "Sugala"
       ],
       "active_hours": [
         12,
@@ -5206,8 +5206,8 @@
       "usage_count": 2,
       "crossing_count": 3,
       "elephants": [
-        "Sugala",
-        "Udani"
+        "Udani",
+        "Sugala"
       ],
       "active_hours": [
         16
@@ -5908,8 +5908,8 @@
       "usage_count": 2,
       "crossing_count": 26,
       "elephants": [
-        "Sugala",
-        "Udani"
+        "Udani",
+        "Sugala"
       ],
       "active_hours": [
         20,
@@ -6398,8 +6398,8 @@
       "usage_count": 2,
       "crossing_count": 6,
       "elephants": [
-        "Samudra",
-        "Nancy"
+        "Nancy",
+        "Samudra"
       ],
       "active_hours": [
         16,
@@ -6566,8 +6566,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Samudra",
-        "Nancy"
+        "Nancy",
+        "Samudra"
       ],
       "active_hours": [
         20,
@@ -6732,8 +6732,8 @@
       "usage_count": 2,
       "crossing_count": 4,
       "elephants": [
-        "Samudra",
-        "Nancy"
+        "Nancy",
+        "Samudra"
       ],
       "active_hours": [
         20,
@@ -7585,8 +7585,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Samudra",
-        "Nancy"
+        "Nancy",
+        "Samudra"
       ],
       "active_hours": [
         0,
@@ -7701,8 +7701,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Samudra",
-        "Nancy"
+        "Nancy",
+        "Samudra"
       ],
       "active_hours": [
         12,
@@ -7761,8 +7761,8 @@
       "usage_count": 2,
       "crossing_count": 3,
       "elephants": [
-        "Samudra",
-        "Nancy"
+        "Nancy",
+        "Samudra"
       ],
       "active_hours": [
         20,

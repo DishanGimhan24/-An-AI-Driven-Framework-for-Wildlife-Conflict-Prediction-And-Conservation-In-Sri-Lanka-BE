@@ -11,16 +11,22 @@ import time
 
 SERVICES = [
     {
-        "name": "Corridor Service",
+        "name": "Dishan Model (Corridor Service)",
         "cwd": os.path.dirname(os.path.abspath(__file__)),
         "cmd": [sys.executable, "-m", "uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"],
         "port": 8000,
     },
     {
-        "name": "Collision Risk Service",
+        "name": "Himashi's Model (Collision Risk Service)",
         "cwd": os.path.join(os.path.dirname(os.path.abspath(__file__)), "Himashi"),
         "cmd": [sys.executable, "-m", "uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8001"],
         "port": 8001,
+    },
+    {
+        "name": "Tharushi's Model (Wildlife Conflict Prediction)",
+        "cwd": os.path.join(os.path.dirname(os.path.abspath(__file__)), "Tharushi"),
+        "cmd": [sys.executable, "app.py"],
+        "port": 5001,
     },
 ]
 
@@ -43,10 +49,12 @@ def start_services():
     print("\n" + "=" * 60)
     print("ALL SERVICES RUNNING")
     print("=" * 60)
-    print(f"  Corridor Service:       http://localhost:8000")
-    print(f"  Collision Risk Service:  http://localhost:8001")
-    print(f"\n  Corridor docs:          http://localhost:8000/docs")
-    print(f"  Collision Risk docs:    http://localhost:8001/docs")
+    print(f"  Dishan Model (Corridor):         http://localhost:8000")
+    print(f"  Himashi's Model (Collision Risk): http://localhost:8001")
+    print(f"  Tharushi's Model (WC Prediction): http://localhost:5001")
+    print(f"\n  Dishan docs:    http://localhost:8000/docs")
+    print(f"  Himashi docs:   http://localhost:8001/docs")
+    print(f"  Tharushi docs:  http://localhost:5001/")
     print("=" * 60)
     print("Press Ctrl+C to stop all services\n")
 
@@ -79,12 +87,21 @@ def train_models():
         return False
 
     # Train collision risk model
-    print("\n--- Training Collision Risk Model ---")
+    print("\n--- Training Himashi's Collision Risk Model ---")
     himashi_dir = os.path.join(root_dir, "Himashi")
     result = subprocess.run([sys.executable, "train_model.py"], cwd=himashi_dir)
     if result.returncode != 0:
         print("ERROR: Collision risk model training failed!")
         return False
+
+    # Train Tharushi's model
+    print("\n--- Training Tharushi's Wildlife Conflict Model ---")
+    tharushi_dir = os.path.join(root_dir, "Tharushi")
+    tharushi_train = os.path.join(tharushi_dir, "ml_training")
+    if os.path.isdir(tharushi_train):
+        result = subprocess.run([sys.executable, "-m", "ml_training.train"], cwd=tharushi_dir)
+    else:
+        print("   Skipping Tharushi training (no ml_training/train.py found)")
 
     print("\n" + "=" * 60)
     print("ALL MODELS TRAINED SUCCESSFULLY")

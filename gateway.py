@@ -21,6 +21,7 @@ app.add_middleware(
 
 CORRIDOR_SERVICE_URL = os.getenv("CORRIDOR_SERVICE_URL", "http://localhost:8000")
 COLLISION_RISK_SERVICE_URL = os.getenv("COLLISION_RISK_SERVICE_URL", "http://localhost:8001")
+WILDLIFE_CONFLICT_SERVICE_URL = os.getenv("WILDLIFE_CONFLICT_SERVICE_URL", "http://localhost:5001")
 
 
 @app.get("/")
@@ -35,6 +36,10 @@ async def root():
             "collision_risk": {
                 "url": COLLISION_RISK_SERVICE_URL,
                 "endpoints": ["/predict"]
+            },
+            "wildlife_conflict": {
+                "url": WILDLIFE_CONFLICT_SERVICE_URL,
+                "endpoints": ["/api/predict", "/api/forecast", "/api/historical", "/api/heatmap", "/api/stats", "/api/cities"]
             }
         }
     }
@@ -56,6 +61,12 @@ async def health():
             statuses["collision_risk_service"] = "healthy" if resp.status_code == 200 else "unhealthy"
         except Exception:
             statuses["collision_risk_service"] = "unreachable"
+
+        try:
+            resp = await client.get(f"{WILDLIFE_CONFLICT_SERVICE_URL}/api/health")
+            statuses["wildlife_conflict_service"] = "healthy" if resp.status_code == 200 else "unhealthy"
+        except Exception:
+            statuses["wildlife_conflict_service"] = "unreachable"
 
     overall = "healthy" if all(v == "healthy" for v in statuses.values()) else "degraded"
     return {"status": overall, "services": statuses}
@@ -91,6 +102,13 @@ async def proxy_predict_risk(request: Request):
 @app.post("/predict")
 async def proxy_predict(request: Request):
     return await _proxy(request, COLLISION_RISK_SERVICE_URL, "/predict")
+
+
+# ---- Proxy to Tharushi's Wildlife Conflict Service ----
+
+@app.api_route("/api/{path:path}", methods=["GET", "POST"])
+async def proxy_tharushi_api(request: Request, path: str):
+    return await _proxy(request, WILDLIFE_CONFLICT_SERVICE_URL, f"/api/{path}")
 
 
 # ---- Generic proxy helper ----
