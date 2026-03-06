@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import joblib
 import numpy as np
+import os
+import uvicorn
 
 # =========================
 # 1. CREATE APP
@@ -22,7 +24,8 @@ app.add_middleware(
 # 3. LOAD TRAINED MODEL
 # =========================
 # NOTE: path = backend/model/risk_model.pkl
-model = joblib.load("model/risk_model.pkl")
+MODEL_PATH = os.getenv("MODEL_PATH", "model/risk_model.pkl")
+model = joblib.load(MODEL_PATH)
 
 # =========================
 # 4. PREDICTION ENDPOINT
@@ -83,3 +86,11 @@ def predict(data: dict):
 @app.get("/")
 def root():
     return {"status": "API is running"}
+
+
+# =========================
+# 6. RUN SERVER
+# =========================
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8001))
+    uvicorn.run("api:app", host="0.0.0.0", port=port, reload=False)
