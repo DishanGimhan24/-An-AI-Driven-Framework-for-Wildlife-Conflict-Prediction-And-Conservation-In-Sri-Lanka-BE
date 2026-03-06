@@ -134,3 +134,6 @@ dmypy.json
 *.csv
 *.xlsx
 *.json
+
+# Allow Final Dataset files
+!Final Dataset/**
