@@ -212,3 +212,9 @@ __marimo__/
 # Large model files
 *.joblib
 *.cbm
+
+# Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
