@@ -18,7 +18,7 @@
       "eps_km": 0.5,
       "min_samples": 5
     },
-    "generated_at": "2026-03-06 16:07:19.870555"
+    "generated_at": "2026-03-07 23:31:12.815030"
   },
   "nodes": [
     {
@@ -3247,8 +3247,8 @@
       "usage_count": 3,
       "crossing_count": 21,
       "elephants": [
-        "Mihiri",
         "Samudra",
+        "Mihiri",
         "Nancy"
       ],
       "active_hours": [
@@ -3586,8 +3586,8 @@
       "usage_count": 3,
       "crossing_count": 10,
       "elephants": [
-        "Mihiri",
         "Samudra",
+        "Mihiri",
         "Nancy"
       ],
       "active_hours": [
@@ -6941,8 +6941,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Mihiri",
-        "Samudra"
+        "Samudra",
+        "Mihiri"
       ],
       "active_hours": [
         0
@@ -7092,8 +7092,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Mihiri",
-        "Samudra"
+        "Samudra",
+        "Mihiri"
       ],
       "active_hours": [
         0,

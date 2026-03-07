@@ -1,0 +1,41 @@
+{
+  "version": "v3",
+  "categorical_features": [
+    "region",
+    "location",
+    "season",
+    "lag_top_1",
+    "lag_top_2",
+    "lag_top_3"
+  ],
+  "numeric_features": [
+    "month_num",
+    "month_sin",
+    "month_cos",
+    "lag_cases_1",
+    "lag_cases_2",
+    "lag_cases_3",
+    "lag_has_1",
+    "lag_has_2",
+    "lag_has_3",
+    "roll_3_cases",
+    "roll_6_cases",
+    "trend_3",
+    "trend_6"
+  ],
+  "labels": {
+    "risk": "has_offence",
+    "type": "top_offence"
+  },
+  "notes": {
+    "forecast_safe": true,
+    "rolling_features": [
+      "roll_3_cases",
+      "roll_6_cases"
+    ],
+    "trend_features": [
+      "trend_3",
+      "trend_6"
+    ]
+  }
+}
