@@ -8,8 +8,9 @@ import warnings
 warnings.filterwarnings('ignore')
 warnings.filterwarnings('ignore', category=FutureWarning)
 warnings.filterwarnings('ignore', category=DeprecationWarning)
-from flask import Flask, jsonify
+from flask import Flask, jsonify, redirect
 from flask_cors import CORS
+from flasgger import Swagger
 
 from api.forecast import forecast_bp
 from api.predict import predict_bp
@@ -25,6 +26,15 @@ from api.cities import cities_bp
 app = Flask(__name__)
 CORS(app)
 
+# Swagger UI available at /apidocs
+Swagger(app, template={
+    'info': {
+        'title': 'Wildlife Conflict Prediction API',
+        'description': 'Wildlife conflict risk prediction for Sri Lanka',
+        'version': '1.0.0',
+    }
+})
+
 # Register blueprints
 app.register_blueprint(predict_bp, url_prefix='/api')
 app.register_blueprint(historical_bp, url_prefix='/api')
@@ -36,12 +46,8 @@ app.register_blueprint(cities_bp, url_prefix='/api')
 
 @app.route('/')
 def home():
-    """Health check endpoint"""
-    return jsonify({
-        'message': 'Wildlife Conflict Prediction API',
-        'status': 'running',
-        'version': '1.0.0'
-    })
+    """Redirect to Swagger docs"""
+    return redirect('/apidocs')
 
 
 @app.route('/api/health')
