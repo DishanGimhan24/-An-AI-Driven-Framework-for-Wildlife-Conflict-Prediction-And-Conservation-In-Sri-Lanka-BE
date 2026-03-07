@@ -1,0 +1,259 @@
+latitude,longitude,animal_type,vehicle_type,Region,District,DS_Division,rain,water_distance,NDVI,distance_to_forest
+8.059542717,80.59500528,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1600.834106,1249.813534,0,21598.90477
+8.63106399,80.56755341,Elephant,Train,Anuradhapura,Anuradhapura,Medawachchiya,1721.166504,1652.258758,-0.01769,6304.574777
+8.091609418,80.79551087,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3567.41406,0,3582.264938
+8.248115895,80.93200533,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1836.348511,2466.472845,-0.01694,4401.024125
+8.057048825,80.77030424,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,64.36040973,0,7042.358642
+8.092631195,80.79635479,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3483.999626,0,3514.374318
+8.091772174,80.79573773,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3556.526972,0,3561.139021
+8.311203285,80.95912153,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1951.132446,10039.44158,-0.01769,5199.544119
+8.064242088,80.9085236,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1850.384888,2508.811386,-0.01694,5573.901535
+7.936297269,81.24217103,Elephant,Train,Polonnaruwa,Polonnaruwa,Welikanda,2052.664795,14575.34211,-0.01769,14081.4989
+8.250874033,79.82934592,Elephant,Train,Puththalama,Puththalama,Vanathawilluwa,1485.205566,418.3202363,-0.01801,31819.89069
+8.719429804,80.23665274,Elephant,Train,Vavuniyawa,Vavuniyawa,Vengalasettikulam,1537.395386,3820.910844,0,36998.34641
+9.16112755,80.42992577,Elephant,Train,Kilinochchiya,Mullativu,Oddusudan,1858.011353,83.61990985,-0.01769,10826.72442
+9.16112755,80.42992577,Elephant,Train,Kilinochchiya,Mullativu,Oddusudan,1858.011353,83.61990985,-0.01769,10826.72442
+8.058047044,80.70438015,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1638.447876,626.7163537,0,27913.75513
+8.058047044,80.70438015,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1638.447876,626.7163537,0,27913.75513
+8.143446764,80.83645972,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1693.969971,2863.007507,0,9452.587089
+8.078534045,80.78731682,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,3587.148766,0,4489.787846
+8.08368,80.790074,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,4090.826441,0,4123.496279
+8.27992232,80.94506316,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1866.262451,6250.144974,-0.01769,2906.382816
+8.281405079,80.94558125,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1866.262451,6422.714743,-0.01769,2929.986019
+7.913521032,81.08642993,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,5738.061713,-0.01694,5289.108423
+8.15412239,80.89250923,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1769.734985,8833.076761,0,11135.35719
+8.061622263,80.9006292,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1850.384888,3328.857661,-0.01694,4847.175061
+8.310245433,80.95771389,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1951.132446,9878.31961,-0.01769,5011.837721
+8.079429333,80.78569271,Elephant,bus,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,2975.442855,0,4650.763436
+7.942549717,81.23854103,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1280.339941,-0.01694,14220.55379
+8.106526133,80.87661545,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1752.172363,1253.25454,0,5895.783044
+7.833539507,80.26343591,Elephant,Train,North western,Kurunegala,Mahawa,1751.029297,258.732545,0.14679,7469.392605
+7.989295146,80.27040222,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,145.904168,0.24096,3880.370918
+7.989476038,80.27043828,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,125.6504099,0.24096,3885.456521
+7.989711228,80.27051056,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,99.34458565,0.24096,3895.012455
+7.990290064,80.27060964,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,36.77913924,0.24096,3910.575864
+8.062402775,80.62438247,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1604.914795,1983.321623,-0.01694,1052.5062
+8.091681756,80.79558347,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,3561.740997,0,3575.912918
+9.055996036,80.48339468,Elephant,Train,Vavuniyawa,Vavuniyawa,Vavuniya North,2053.791016,7341.649448,-0.01769,2686.905786
+9.055996036,80.48339468,Elephant,Train,Vavuniyawa,Vavuniyawa,Vavuniya North,2053.791016,7341.649448,-0.01769,2686.905786
+7.94255,81.238967,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1316.953391,-0.01694,14267.29435
+7.951562786,80.45609147,Elephant,Train,North western,Anuradhapura,Galneva,1666.299927,1795.238067,-0.01769,16798.06855
+8.065476958,80.68710372,Elephant,Train,Anuradhapura,Anuradhapura,Palugasvewa,1582.181885,1325.014353,-0.01694,7209.212748
+7.942549717,81.23854103,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1280.339941,-0.01694,14220.55379
+8.064226778,80.89994047,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1768.063354,3207.25699,-0.01694,5060.201337
+8.064226778,80.89994047,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1768.063354,3207.25699,-0.01694,5060.201337
+8.739081108,80.21361294,Elephant,Train,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2897.438019,0,19146.20203
+8.05554769,80.77773495,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,881.3377034,0,6404.999701
+8.085288795,80.79107353,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,4169.246701,0,4008.234992
+8.120092116,79.8625799,Elephant,Train,Puttalama,Puttalama,Wanathawilluwa,1535.222778,377.7155934,0.21739,12999.8285
+8.13218042,80.87590522,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1752.172363,1797.340114,0,12049.53136
+8.13218042,80.87590522,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1752.172363,1797.340114,0,12049.53136
+8.13218042,80.87590522,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1752.172363,1797.340114,0,12049.53136
+8.13218042,80.87590522,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1752.172363,1797.340114,0,12049.53136
+8.13218042,80.87590522,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1752.172363,1797.340114,0,12049.53136
+8.13218042,80.87590522,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1752.172363,1797.340114,0,12049.53136
+8.13218042,80.87590522,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1752.172363,1797.340114,0,12049.53136
+7.911509,81.081745,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1209.77225,-0.01694,5748.169797
+7.952078746,80.4567895,Elephant,Train,North western,Anuradhapura,Galnewa,1666.299927,1780.188826,-0.01769,16847.88437
+8.057980141,80.78022098,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,1128.364426,0,6031.880888
+7.905529612,81.05809991,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,3434.139096,-0.01769,7936.969467
+8.055547195,80.75067049,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1662.249023,5927.473219,0,20705.49047
+8.138672789,80.83281997,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1693.969971,3498.297669,0,9927.13917
+9.156599698,80.43228674,Elephant,Train,Kilinochchi,Mullaitivu,Oddusudan,1858.011353,388.9989785,-0.01694,10268.49059
+8.138042,80.832443,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1693.969971,3578.605527,0,9992.528202
+7.96900319,80.26237221,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,265.5832745,-0.0187,2196.05897
+7.911182997,81.08105896,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1237.087629,-0.01694,5819.810594
+8.429879047,81.04845715,Elephant,Train,Trincomalee,Trincomalee,Thabalagamuwa,1968.523315,3865.535427,-0.01801,9164.115887
+7.98524,80.266797,Elephant,Van,North western,Kurunegala,Galgamuwa,1537.662842,409.0479235,0.14679,3485.795696
+8.314196,80.960721,Elephant,Van,Polonnaruwa,Polonnaruwa,Medirigiriya,1951.132446,10413.87665,-0.01694,5529.397251
+8.045256,79.92243,Elephant,Van,Putthalama,Putthalama,Karuvalagasvewa,1468.918579,73.50134359,0.17999,2775.024581
+8.654301,81.18141,Elephant,car,Trincomallee,Trincomallee,Kuchchaveli,1877.55896,1051.009165,-0.01923,24076.19875
+8.72905,80.223679,Elephant,Bus,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2803.183161,0,20251.63602
+8.102768,80.80435,Elephant,Truck,Polonnaruwa,Polonnaruwa,Higurakgoda,1693.969971,2909.415805,0,3178.354891
+8.070942,79.98464,Elephant,Truck,Puththalama,Puththalama,Karuwalagaswewa,1513.574097,172.4443585,1,8581.891651
+7.979921,80.265143,Elephant,Truck,North western,Kurunegala,Galgamuwa,1537.662842,785.2427268,0.21739,3397.987321
+8.092043,80.795293,Elephant,Van,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3514.935374,0,3615.07473
+8.059537,80.595068,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1600.834106,1251.578313,0,21602.4125
+8.059529,80.59501,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1600.834106,1251.394845,0,21597.97341
+8.059591,80.59567,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1600.834106,1258.573714,0,21645.93993
+8.091455,80.795382,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3580.334692,0,3593.07639
+8.091243,80.795264,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3599.812976,0,3601.694535
+8.091589,80.795611,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3572.434278,0,3571.001157
+8.247994,80.93193,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1836.348511,2450.644996,-0.01694,4411.20325
+8.248369,80.932113,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1836.348511,2496.595761,-0.01694,4378.269473
+8.247973,80.93193,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1836.348511,2448.649351,-0.01694,4413.40853
+8.056984,80.770396,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,75.96875975,0,7036.532085
+8.057117,80.770244,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,54.46390043,0,7044.927725
+8.056984,80.770284,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,69.46590341,0,7047.565115
+8.092631195,80.79635479,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3483.999626,0,3514.374318
+8.092579,80.796422,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3491.668283,0,3505.868827
+8.092732,80.79645,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3476.380458,0,3506.653159
+8.091867,80.795689,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3544.996389,0,3568.446992
+8.091768,80.795684,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3555.415853,0,3566.860647
+8.311015,80.958811,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1951.132446,10006.12655,-0.01769,5159.506988
+8.311304,80.959382,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1951.132446,10061.69603,-0.01769,5229.720141
+8.311332,80.959437,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1951.132446,10067.07481,-0.01769,5236.493402
+8.064101,80.908513,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1850.384888,2521.429468,-0.01694,5560.738674
+8.064133,80.908759,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1850.384888,2501.222001,-0.01694,5579.937314
+8.06419,80.908051,Elephant,Train,Polonnaruwa,Polonnaruwa,Hingurakgoda,1850.384888,2547.354625,-0.01694,5538.101832
+7.936319,81.242276,Elephant,Train,Polonnaruwa,Polonnaruwa,Welikanda,2052.664795,14564.95073,-0.01769,14074.2565
+7.9364,81.241931,Elephant,Train,Polonnaruwa,Polonnaruwa,Welikanda,2052.664795,14603.95394,-0.01769,14109.0099
+8.250787,79.829236,Elephant,Train,Puththalama,Puththalama,Vanathawilluwa,1485.205566,428.8858313,-0.01801,31835.30041
+8.719223,80.236824,Elephant,Train,Vavuniyawa,Vavuniyawa,Vengalasettikulam,1537.395386,3837.106866,0,36990.96494
+8.719519,80.236562,Elephant,Train,Vavuniyawa,Vavuniyawa,Vengalasettikulam,1537.395386,3812.131297,0,37000.44426
+8.719386,80.236671,Elephant,Train,Vavuniyawa,Vavuniyawa,Vengalasettikulam,1537.395386,3822.358386,0,36995.61366
+9.160796,80.430088,Elephant,Train,Kilinochchiya,Mullativu,Oddusudan,1858.011353,95.69631732,-0.01769,10786.21561
+9.161332,80.429908,Elephant,Train,Kilinochchiya,Mullativu,Oddusudan,1858.011353,76.7449517,-0.01769,10848.70463
+9.161303,80.429866,Elephant,Train,Kilinochchiya,Mullativu,Oddusudan,1858.011353,82.04425667,-0.01769,10847.20994
+9.161233,80.429928,Elephant,Train,Kilinochchiya,Mullativu,Oddusudan,1858.011353,78.18554358,-0.01769,10837.64549
+9.160919,80.430049,Elephant,Train,Kilinochchiya,Mullativu,Oddusudan,1858.011353,87.67841683,-0.01769,10800.47141
+8.058446,80.703364,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1638.447876,577.2745634,0,28013.16573
+8.058045,80.704343,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1638.447876,623.4018113,0,27915.86372
+8.057977,80.704504,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1638.447876,632.5881517,0,27899.68814
+8.058043,80.704437,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1638.447876,631.3098936,0,27909.87233
+8.143466,80.836539,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1693.969971,2858.189237,0,9451.77276
+8.143409,80.836469,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1693.969971,2866.632548,0,9456.868693
+8.143446764,80.83645972,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1693.969971,2863.007507,0,9452.587089
+8.078544,80.787424,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,3585.442911,0,4477.961873
+8.078466,80.787405,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,3577.546419,0,4481.52492
+8.079147,80.787515,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,3648.03203,0,4456.99938
+8.077712,80.787285,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,3499.740462,-0.01694,4509.835612
+8.076547,80.787094,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,3380.306841,-0.01694,4556.910722
+8.083425,80.789902,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,4065.46492,0,4143.935349
+8.083786,80.790138,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,4325.747836,0,4115.878251
+8.079381,80.78564,Elephant,bus,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,2967.716834,0,4657.291721
+8.080075,80.786127,Elephant,Truck,Polonnaruwa,Polonnaruwa,Higurakgoda,1662.249023,3061.36473,0,4593.449898
+8.311053,80.95893,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1951.132446,10015.46336,-0.01769,5172.814749
+8.310696,80.958307,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1951.132446,9950.813745,-0.01769,5093.726196
+8.309835,80.957374,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1951.132446,9821.509597,-0.01769,4955.888546
+7.942743,81.239494,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1350.540902,-0.01694,14323.07522
+7.942488,81.238803,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1307.057499,-0.01694,14249.96689
+7.942423,81.238602,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1294.443496,-0.01694,14228.61751
+7.942549717,81.23854103,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1280.339941,-0.01694,14220.55379
+8.106338,80.876585,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1752.172363,1273.600172,0,5884.538587
+8.106498,80.876542,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1752.172363,1259.445748,0,5887.116523
+8.107071,80.876471,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1752.172363,1205.596913,0,5905.17665
+8.106102,80.876623,Elephant,Train,Polonnaruwa,Polonnaruwa,Higurakgoda,1752.172363,1295.783451,0,5878.253836
+7.833539507,80.26343591,Elephant,Train,North western,Kurunegala,Mahawa,1751.029297,258.732545,0.14679,7469.392605
+7.833539507,80.26343591,Elephant,Train,North western,Kurunegala,Mahawa,1751.029297,258.732545,0.14679,7469.392605
+7.83322,80.263414,Elephant,Train,North western,Kurunegala,Mahawa,1751.029297,259.5098475,0.14679,7475.68039
+7.833791,80.263286,Elephant,Train,North western,Kurunegala,Mahawa,1751.029297,243.1531457,0.27631,7482.89328
+7.833382,80.263323,Elephant,Train,North western,Kurunegala,Mahawa,1751.029297,247.2974496,0.27631,7483.665163
+7.989295146,80.27040222,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,145.904168,0.24096,3880.370918
+7.989201,80.270415,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,156.1712672,0.24096,3881.237452
+7.989507,80.270479,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,121.9986786,0.24096,3890.139143
+7.990387,80.270608,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,26.57975981,0.24096,3911.278504
+7.988873,80.270389,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,150.9803568,0.06541,3876.708407
+7.991169,80.270755,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,46.95928559,0.24096,3935.581812
+7.991012,80.270717,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,30.8183263,0.24096,3929.625626
+7.992459,80.270987,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,190.3736275,0.24096,3978.456714
+7.990290064,80.27060964,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,36.77913924,0.24096,3910.575864
+7.988779,80.270361,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,140.2382646,0.06541,3873.208724
+7.989032,80.270391,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,168.4017901,0.06541,3877.694131
+7.990194,80.27061,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,47.08540072,0.24096,3909.769368
+7.990722,80.270662,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,5.68864059,0.24096,3920.48152
+7.991628,80.270847,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,97.52014574,0.24096,3951.31591
+8.062397,80.624252,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1604.914795,1992.729721,-0.01694,1053.742071
+8.06241,80.624542,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1604.914795,1971.885479,-0.01694,1051.279001
+8.062373,80.624042,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1604.914795,2009.262059,-0.01694,1054.534664
+8.06235,80.623681,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1604.914795,2036.437626,-0.01694,1059.076812
+8.062402775,80.62438247,Elephant,Train,Anuradhapura,Anuradhapura,Kekirawa,1604.914795,1983.321623,-0.01694,1052.5062
+8.092027,80.795597,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,3525.262554,0,3581.887747
+8.091859,80.795893,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,3551.827343,0,3546.22598
+8.093002,80.79663,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,3453.735484,0,3494.253717
+8.091255,80.795313,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,3599.859299,0,3596.609618
+9.05584,80.483503,Elephant,Train,Vavuniyawa,Vavuniyawa,Vavuniya North,2053.791016,7351.604139,-0.01769,2706.130506
+9.05611,80.483313,Elephant,Train,Vavuniyawa,Vavuniyawa,Vavuniya North,2053.791016,7334.537232,-0.01769,2672.641003
+9.055985,80.483494,Elephant,Train,Vavuniyawa,Vavuniyawa,Vavuniya North,2053.791016,7337.766139,-0.01769,2696.835429
+9.055937,80.483459,Elephant,Train,Vavuniyawa,Vavuniyawa,Vavuniya North,2053.791016,7344.243461,-0.01769,2696.356297
+9.05586,80.483516,Elephant,Train,Vavuniyawa,Vavuniyawa,Vavuniya North,2053.791016,7348.984709,-0.01769,2706.173811
+9.054229,80.484405,Elephant,Train,Vavuniyawa,Vavuniyawa,Vavuniya North,2053.791016,7467.325347,-0.01769,2886.256814
+8.064252,80.900109,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1850.384888,3190.671888,-0.01694,5071.510045
+8.064252,80.899819,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1768.063354,3216.384118,-0.01694,5056.306166
+8.064221,80.902683,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1850.384888,2969.979367,-0.01694,5210.180625
+8.064237,80.90256,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1850.384888,2979.256097,-0.01694,5204.659865
+8.064328,80.899642,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1768.063354,3227.191472,-0.01694,5054.523353
+7.942447,81.238928,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1320.646882,-0.01694,14264.12706
+7.942646,81.239012,Elephant,Train,Polonnaruwa,Polonnaruwa,Velikanda,2052.664795,1314.35871,-0.01694,14271.20446
+7.951562786,80.45609147,Elephant,Train,North western,Anuradhapura,Galneva,1666.299927,1795.238067,-0.01769,16798.06855
+7.951674,80.456397,Elephant,Train,North western,Anuradhapura,Galneva,1666.299927,1779.218948,-0.01769,16807.20033
+7.951441,80.455968,Elephant,Train,North western,Anuradhapura,Galneva,1666.299927,1796.145636,-0.01769,16785.93805
+7.9522,80.457005,Elephant,Train,North western,Anuradhapura,Galneva,1666.299927,1773.493407,-0.01769,16859.15346
+7.951,80.455247,Elephant,Train,North western,Anuradhapura,Galneva,1666.299927,1824.340193,-0.01769,16745.09579
+8.739081108,80.21361294,Elephant,Train,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2897.438019,0,19146.20203
+8.739066,80.213719,Elephant,Train,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2901.034017,0,19147.4997
+8.739272,80.213406,Elephant,Train,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2906.687305,0,19125.84832
+8.739558,80.212879,Elephant,Train,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2911.349386,0,19096.26482
+8.738336,80.214796,Elephant,Train,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2883.962636,0,19224.83235
+8.739958,80.211868,Elephant,Train,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2909.154308,-0.01769,19056.45167
+8.739807,80.212313,Elephant,Train,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2912.073087,0,19071.12365
+8.06424,80.899856,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1768.063354,3213.883406,-0.01694,5057.068585
+8.064243,80.90026,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1850.384888,3177.92484,-0.01694,5078.615325
+8.120089,79.862665,Elephant,Train,Puttalama,Puttalama,Wanathawilluwa,1535.222778,379.058096,0.21739,12992.15402
+8.120203,79.86268,Elephant,Train,Puttalama,Puttalama,Wanathawilluwa,1535.222778,366.7502117,0.21739,12983.89577
+8.120497,79.862684,Elephant,Train,Puttalama,Puttalama,Wanathawilluwa,1535.222778,334.5893772,0.21739,12965.84122
+8.119821,79.862613,Elephant,Train,Puttalama,Puttalama,Wanathawilluwa,1535.222778,407.9088855,0.21739,13013.14085
+8.229622,79.862663,Elephant,Train,Puttalama,Puttalama,Wanathawilluwa,1549.904785,7278.192941,0,11994.87992
+8.055775,80.777809,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,883.3464416,0,6385.016702
+8.055636,80.77787,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,893.4035921,0,6387.207004
+8.055713,80.777829,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,887.0336696,0,6386.668597
+8.05551,80.777392,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,845.89135,0,6439.512679
+8.055883,80.778117,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,914.0123278,0,6349.77433
+8.085269,80.791222,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,4173.118227,0,3991.887553
+8.085389,80.791216,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,4159.852068,0,3992.467084
+8.085225,80.79114,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,4177.014745,0,4000.966288
+7.911381458,81.08170305,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1202.60052,-0.01694,5762.516993
+7.911381458,81.08170305,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1202.60052,-0.01694,5762.516993
+7.911381458,81.08170305,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1202.60052,-0.01694,5762.516993
+7.911381458,81.08170305,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1202.60052,-0.01694,5762.516993
+7.911454,81.081596,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1216.53508,-0.01694,5762.238083
+7.91149,81.081723,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1209.874148,-0.01694,5751.25417
+7.91138,81.081686,Elephant,Train,North western,Anuradhapura,Galnewa,1955.622559,1203.772304,-0.01694,5763.676676
+7.911393,81.081718,Elephant,Train,North western,Anuradhapura,Galnewa,1955.622559,1202.402197,-0.01694,5760.548503
+8.057980141,80.78022098,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,1128.364426,0,6031.880888
+8.057980141,80.78022098,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,1128.364426,0,6031.880888
+8.058012,80.780248,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,1131.496324,0,6027.530079
+8.058039,80.780219,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1662.249023,1128.445326,0,6028.781016
+7.911494,81.081734,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1209.375361,-0.01694,5750.221804
+7.9115,81.081773,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1206.949886,-0.01694,5747.321146
+8.055547195,80.75067049,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1662.249023,5927.473219,0,20705.49047
+8.055547195,80.75067049,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1662.249023,5927.473219,0,20705.49047
+8.055431,80.750725,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1662.249023,5941.183674,0,20714.99055
+8.055502,80.750755,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1662.249023,5934.044788,0,20706.47033
+8.055581,80.751072,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1662.249023,5931.781082,0,20684.85302
+8.055437,80.750557,Elephant,Train,Anuradhapura,Anuradhapura,Palugaswewa,1662.249023,5937.27396,0,20721.5876
+9.156536,80.432248,Elephant,Train,Kilinochchi,Mullaitivu,Oddusudan,1858.011353,394.7180169,-0.01694,10263.21184
+9.15662,80.432197,Elephant,Train,Kilinochchi,Mullaitivu,Oddusudan,1858.011353,384.3382565,-0.01694,10273.82086
+9.156536,80.432323,Elephant,Train,Kilinochchi,Mullaitivu,Oddusudan,1858.011353,396.8495211,-0.01694,10260.53319
+9.156587,80.432293,Elephant,Train,Kilinochchi,Mullaitivu,Oddusudan,1858.011353,390.5350408,-0.01694,10266.93885
+8.13865,80.832824,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1693.969971,3500.462821,0,9929.691282
+8.138681,80.832852,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1693.969971,3496.123133,0,9926.588257
+8.138642,80.832879,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1693.969971,3498.996399,0,9931.177995
+7.96900319,80.26237221,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,265.5832745,-0.0187,2196.05897
+7.96900319,80.26237221,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,265.5832745,-0.0187,2196.05897
+7.96900319,80.26237221,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,265.5832745,-0.0187,2196.05897
+7.968904,80.262461,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,276.187075,-0.0187,2202.150089
+7.96887,80.262398,Elephant,Train,North western,Kurunegala,Galgamuwa,1537.662842,269.6693298,-0.0187,2194.406281
+7.969027,80.262277,Elephant,Truck,North western,Kurunegala,Galgamuwa,1537.662842,254.9604011,-0.0187,2186.841458
+7.969081,80.26239,Elephant,Truck,North western,Kurunegala,Galgamuwa,1537.662842,267.1830245,-0.0187,2200.523129
+7.911141,81.081028,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1236.365474,-0.01694,5825.567869
+7.911168,81.081103,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1232.431256,-0.01694,5818.5172
+7.91107,81.080972,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1235.500221,-0.01694,5835.523766
+7.911148,81.081061,Elephant,Train,Polonnaruwa,Polonnaruwa,Thamankaduwa,1955.622559,1234.256559,-0.01694,5822.915256
+8.430027,81.048409,Elephant,Train,Trincomalee,Trincomalee,Thabalagamuwa,1968.523315,3870.395668,-0.01801,9181.301989
+8.429971,81.048357,Elephant,Train,Trincomalee,Trincomalee,Thabalagamuwa,1968.523315,3876.277544,-0.01801,9176.875749
+8.430005,81.048498,Elephant,Train,Trincomalee,Trincomalee,Thabalagamuwa,1968.523315,3860.660011,-0.01801,9176.331451
+8.138008,80.832489,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1693.969971,3580.153116,0,9996.753776
+8.138028,80.832424,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1693.969971,3580.835525,0,9993.871069
+8.138038,80.83248,Elephant,Train,Polonnaruwa,Polonnaruwa,Higuraggoda,1693.969971,3577.461504,0,9993.356425
+8.09213,80.795358,Elephant,Bus,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3507.450444,0,3609.980546
+8.092101,80.795251,Elephant,Bus,Polonnaruwa,Polonnaruwa,Hingurakgoda,1662.249023,3507.560611,0,3620.88965
+7.979908,80.265159,Elephant,Truck,North western,Kurunegala,Galgamuwa,1537.662842,783.4668304,0.21739,3400.049199
+7.979936,80.265175,Elephant,Truck,North western,Kurunegala,Galgamuwa,1537.662842,781.7328382,0.21739,3401.004074
+8.070913,79.984704,Elephant,Van,Puththalama,Puththalama,Karuwalagaswewa,1513.574097,175.9290618,1,8574.701907
+8.070883,79.984543,Elephant,Van,Puththalama,Puththalama,Karuwalagaswewa,1513.574097,179.0833998,1,8592.284919
+8.07079,79.984402,Elephant,Bus,Puththalama,Puththalama,Karuwalagaswewa,1513.574097,190.5911145,1,8607.368763
+8.102846,80.804375,Elephant,Truck,Polonnaruwa,Polonnaruwa,Higurakgoda,1693.969971,2904.646402,0,3181.328522
+8.102768,80.804324,Elephant,Truck,Polonnaruwa,Polonnaruwa,Higurakgoda,1693.969971,2907.558561,0,3180.64974
+8.728976,80.223749,Elephant,Bus,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2805.33552,0,20260.00587
+8.729082,80.223619,Elephant,Bus,Vavuniyawa,Vavuniyawa,Settikulam,1537.395386,2799.505554,0,20247.93907

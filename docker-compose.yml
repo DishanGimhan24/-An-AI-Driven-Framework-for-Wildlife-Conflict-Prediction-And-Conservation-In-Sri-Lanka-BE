@@ -1,0 +1,81 @@
+version: "3.8"
+
+services:
+  # Service 1: Elephant Corridor & Presence Prediction
+  corridor-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: corridor-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./outputs:/app/outputs
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+    environment:
+      - SERVICE_NAME=corridor-service
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Service 2: Collision Risk Prediction (Himashi)
+  collision-risk-service:
+    build:
+      context: ./Himashi
+      dockerfile: Dockerfile
+    container_name: collision-risk-service
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./Himashi/model:/app/model
+      - ./data:/app/data
+    environment:
+      - SERVICE_NAME=collision-risk-service
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Service 3: Wildlife Conflict Prediction (Tharushi)
+  wildlife-conflict-service:
+    build:
+      context: ./Tharushi
+      dockerfile: Dockerfile
+    container_name: wildlife-conflict-service
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./Tharushi/models:/app/models
+      - ./Tharushi/Final Dataset:/app/Final Dataset
+    environment:
+      - SERVICE_NAME=wildlife-conflict-service
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # API Gateway (optional) - routes requests to the correct service
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - corridor-service
+      - collision-risk-service
+      - wildlife-conflict-service
+    environment:
+      - CORRIDOR_SERVICE_URL=http://corridor-service:8000
+      - COLLISION_RISK_SERVICE_URL=http://collision-risk-service:8001
+      - WILDLIFE_CONFLICT_SERVICE_URL=http://wildlife-conflict-service:5001
+    restart: unless-stopped
