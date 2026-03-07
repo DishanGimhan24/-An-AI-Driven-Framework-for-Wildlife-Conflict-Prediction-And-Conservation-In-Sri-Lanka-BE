@@ -2,7 +2,12 @@ import json
 import os
 
 import joblib
-from tensorflow.keras.models import load_model
+
+try:
+    from tensorflow.keras.models import load_model
+except ImportError:
+    load_model = None
+    print("⚠ TensorFlow not installed — LSTM model will not be available")
 
 from config import RF_MODEL_PATH, SCALER_PATH, METRICS_PATH, MODELS_DIR
 
@@ -64,6 +69,9 @@ class ModelLoader:
 
     def load_lstm_model(self):
         """Load LSTM model and scaler"""
+        if load_model is None:
+            print("⚠ TensorFlow not available — skipping LSTM model")
+            return False
         try:
             # Load LSTM model
             lstm_model_path = os.path.join(MODELS_DIR, 'lstm_model.keras')
