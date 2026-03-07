@@ -1,118 +1,118 @@
 {
-  "accuracy": 0.9919860119481276,
-  "roc_auc": 0.9994828959052218,
+  "accuracy": 0.9922774296954685,
+  "roc_auc": 0.9994695627892947,
   "classification_report": {
     "0": {
-      "precision": 0.992992700729927,
-      "recall": 0.990967365967366,
-      "f1-score": 0.9919789995624909,
+      "precision": 0.9941503363556595,
+      "recall": 0.9903846153846154,
+      "f1-score": 0.9922639030798424,
       "support": 3432.0
     },
     "1": {
-      "precision": 0.9909831297265852,
-      "recall": 0.9930049548236666,
-      "f1-score": 0.9919930120832727,
+      "precision": 0.990418118466899,
+      "recall": 0.9941707956863888,
+      "f1-score": 0.9922909090909091,
       "support": 3431.0
     },
-    "accuracy": 0.9919860119481276,
+    "accuracy": 0.9922774296954685,
     "macro avg": {
-      "precision": 0.991987915228256,
-      "recall": 0.9919861603955162,
-      "f1-score": 0.9919860058228818,
+      "precision": 0.9922842274112793,
+      "recall": 0.9922777055355021,
+      "f1-score": 0.9922774060853757,
       "support": 6863.0
     },
     "weighted avg": {
-      "precision": 0.9919880616344199,
-      "recall": 0.9919860119481276,
-      "f1-score": 0.9919860048020075,
+      "precision": 0.9922844993199117,
+      "recall": 0.9922774296954685,
+      "f1-score": 0.9922774041178681,
       "support": 6863.0
     }
   },
   "confusion_matrix": [
     [
-      3401,
-      31
+      3399,
+      33
     ],
     [
-      24,
-      3407
+      20,
+      3411
     ]
   ],
   "feature_importance": [
     {
       "feature": "Season_encoded",
-      "importance": 0.6960797309875488
+      "importance": 0.6737768054008484
     },
     {
       "feature": "Elevation",
-      "importance": 0.04824026674032211
+      "importance": 0.06778163462877274
     },
     {
       "feature": "WaterDistance",
-      "importance": 0.03760134428739548
-    },
-    {
-      "feature": "LC_30.0",
-      "importance": 0.03297870233654976
-    },
-    {
-      "feature": "HumanDistance",
-      "importance": 0.03143665939569473
+      "importance": 0.046332359313964844
     },
     {
       "feature": "LC_40.0",
-      "importance": 0.031098339706659317
+      "importance": 0.04001709073781967
+    },
+    {
+      "feature": "HumanDistance",
+      "importance": 0.031064756214618683
     },
     {
       "feature": "Protected",
-      "importance": 0.02453318051993847
-    },
-    {
-      "feature": "RoadDistance",
-      "importance": 0.023090887814760208
+      "importance": 0.024454744532704353
     },
     {
       "feature": "NDVI_normalized",
-      "importance": 0.01790483668446541
+      "importance": 0.02321690134704113
     },
     {
-      "feature": "LC_60.0",
-      "importance": 0.011955885216593742
+      "feature": "RoadDistance",
+      "importance": 0.022495897486805916
     },
     {
       "feature": "Month",
-      "importance": 0.01067222561687231
+      "importance": 0.016939004883170128
     },
     {
-      "feature": "LC_80.0",
-      "importance": 0.010559175163507462
+      "feature": "LC_30.0",
+      "importance": 0.012299741618335247
     },
     {
       "feature": "LC_10.0",
-      "importance": 0.0100333821028471
+      "importance": 0.010212723165750504
+    },
+    {
+      "feature": "LC_80.0",
+      "importance": 0.009430620819330215
     },
     {
       "feature": "DayOfWeek",
-      "importance": 0.004980871453881264
+      "importance": 0.009421526454389095
+    },
+    {
+      "feature": "LC_60.0",
+      "importance": 0.003910278435796499
     },
     {
       "feature": "LC_20.0",
-      "importance": 0.004136836156249046
+      "importance": 0.0032692302484065294
     },
     {
       "feature": "Hour",
-      "importance": 0.002970077795907855
+      "importance": 0.003097433829680085
     },
     {
       "feature": "TimeOfDay_encoded",
-      "importance": 0.001727564842440188
-    },
-    {
-      "feature": "LC_50.0",
-      "importance": 0.0
+      "importance": 0.0022791987285017967
     },
     {
       "feature": "LC_90.0",
+      "importance": 0.0
+    },
+    {
+      "feature": "LC_50.0",
       "importance": 0.0
     }
   ],
