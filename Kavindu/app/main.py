@@ -55,6 +55,14 @@ app.add_middleware(
         "http://127.0.0.1:5173",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "http://localhost:5000",
+        "http://127.0.0.1:5000",
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+        "http://localhost:4000",
+        "http://127.0.0.1:4000",
+        "http://localhost:5001",
+        "http://127.0.0.1:4000",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -248,19 +256,23 @@ class HotspotsResponse(BaseModel):
 # Routes
 # -------------------------------------------------
 @app.get("/health")
+@app.get("/api/health")
 def health():
     return {"status": "ok"}
 
 @app.get("/regions")
+@app.get("/api/regions")
 def regions():
     return {"regions": sorted(df["region"].dropna().unique().tolist())}
 
 @app.get("/locations")
+@app.get("/api/locations")
 def locations(region: str):
     sub = df[df["region"] == region]
     return {"locations": sorted(sub["location"].dropna().unique().tolist())}
 
 @app.post("/predict", response_model=PredictResponse)
+@app.post("/api/offence/predict", response_model=PredictResponse)
 def predict(req: PredictRequest):
     if not ((df["region"] == req.region) & (df["location"] == req.location)).any():
         raise HTTPException(status_code=404, detail="Region/location not found. Use dropdowns from /regions and /locations.")
@@ -269,6 +281,7 @@ def predict(req: PredictRequest):
     return PredictResponse(**out)
 
 @app.get("/hotspots", response_model=HotspotsResponse)
+@app.get("/api/hotspots", response_model=HotspotsResponse)
 def hotspots(
     year: int = Query(..., ge=2000, le=2100),
     month: int = Query(..., ge=1, le=12),

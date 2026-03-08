@@ -13,7 +13,14 @@ app = FastAPI(title="Wildlife Conflict Prediction Gateway", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:4000",
+        "http://127.0.0.1:4000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -22,6 +29,7 @@ app.add_middleware(
 CORRIDOR_SERVICE_URL = os.getenv("CORRIDOR_SERVICE_URL", "http://localhost:8000")
 COLLISION_RISK_SERVICE_URL = os.getenv("COLLISION_RISK_SERVICE_URL", "http://localhost:8001")
 WILDLIFE_CONFLICT_SERVICE_URL = os.getenv("WILDLIFE_CONFLICT_SERVICE_URL", "http://localhost:5001")
+KAVINDU_SERVICE_URL = os.getenv("KAVINDU_SERVICE_URL", "http://localhost:8002")
 
 
 @app.get("/")
@@ -104,6 +112,56 @@ async def proxy_predict(request: Request):
     return await _proxy(request, COLLISION_RISK_SERVICE_URL, "/predict")
 
 
+# ---- Proxy to Kavindu's Offence Prediction Service ----
+
+@app.api_route("/api/auth/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+async def proxy_kavindu_auth(request: Request, path: str):
+    return await _proxy(request, KAVINDU_SERVICE_URL, f"/api/auth/{path}")
+
+@app.api_route("/api/reports/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+async def proxy_kavindu_reports_detail(request: Request, path: str):
+    return await _proxy(request, KAVINDU_SERVICE_URL, f"/api/reports/{path}")
+
+@app.api_route("/api/reports", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+async def proxy_kavindu_reports(request: Request):
+    return await _proxy(request, KAVINDU_SERVICE_URL, "/api/reports")
+
+@app.api_route("/api/officers/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+async def proxy_kavindu_officers_detail(request: Request, path: str):
+    return await _proxy(request, KAVINDU_SERVICE_URL, f"/api/officers/{path}")
+
+@app.api_route("/api/officers", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+async def proxy_kavindu_officers(request: Request):
+    return await _proxy(request, KAVINDU_SERVICE_URL, "/api/officers")
+
+@app.api_route("/api/admin/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+async def proxy_kavindu_admin(request: Request, path: str):
+    return await _proxy(request, KAVINDU_SERVICE_URL, f"/api/admin/{path}")
+
+@app.api_route("/api/upload", methods=["POST"])
+async def proxy_kavindu_upload(request: Request):
+    return await _proxy(request, KAVINDU_SERVICE_URL, "/api/upload")
+
+@app.api_route("/api/health", methods=["GET"])
+async def proxy_kavindu_health(request: Request):
+    return await _proxy(request, KAVINDU_SERVICE_URL, "/api/health")
+
+@app.api_route("/api/regions", methods=["GET"])
+async def proxy_kavindu_regions(request: Request):
+    return await _proxy(request, KAVINDU_SERVICE_URL, "/regions")
+
+@app.api_route("/api/locations", methods=["GET"])
+async def proxy_kavindu_locations(request: Request):
+    return await _proxy(request, KAVINDU_SERVICE_URL, "/locations")
+
+@app.api_route("/api/hotspots", methods=["GET"])
+async def proxy_kavindu_hotspots(request: Request):
+    return await _proxy(request, KAVINDU_SERVICE_URL, "/hotspots")
+
+@app.api_route("/api/offence/predict", methods=["POST"])
+async def proxy_kavindu_predict(request: Request):
+    return await _proxy(request, KAVINDU_SERVICE_URL, "/predict")
+
 # ---- Proxy to Tharushi's Wildlife Conflict Service ----
 
 @app.api_route("/api/{path:path}", methods=["GET", "POST"])
@@ -122,9 +180,10 @@ async def _proxy(request: Request, service_url: str, path: str):
         try:
             if request.method == "GET":
                 resp = await client.get(url, params=params)
-            elif request.method == "POST":
-                body = await request.json()
-                resp = await client.post(url, json=body, params=params)
+            elif request.method in ("POST", "PUT", "PATCH", "DELETE"):
+                body = await request.body()
+                headers = {"Content-Type": request.headers.get("Content-Type", "application/json")}
+                resp = await client.request(request.method, url, content=body, params=params, headers=headers)
             else:
                 raise HTTPException(status_code=405, detail="Method not allowed")
 

@@ -9,28 +9,35 @@ import os
 import signal
 import time
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def venv_python(subdir=None):
+    """Return the root .venv Python if it exists, else fall back to sys.executable."""
+    venv_path = os.path.join(ROOT_DIR, ".venv", "bin", "python")
+    return venv_path if os.path.exists(venv_path) else sys.executable
+
 SERVICES = [
     {
         "name": "Dishan Model (Corridor Service)",
-        "cwd": os.path.dirname(os.path.abspath(__file__)),
+        "cwd": ROOT_DIR,
         "cmd": [sys.executable, "-m", "uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"],
         "port": 8000,
     },
     {
         "name": "Himashi's Model (Collision Risk Service)",
-        "cwd": os.path.join(os.path.dirname(os.path.abspath(__file__)), "Himashi"),
+        "cwd": os.path.join(ROOT_DIR, "Himashi"),
         "cmd": [sys.executable, "-m", "uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8001"],
         "port": 8001,
     },
     {
         "name": "Tharushi's Model (Wildlife Conflict Prediction)",
-        "cwd": os.path.join(os.path.dirname(os.path.abspath(__file__)), "Tharushi"),
-        "cmd": [sys.executable, "app.py"],
+        "cwd": os.path.join(ROOT_DIR, "Tharushi"),
+        "cmd": [venv_python("Tharushi"), "app.py"],
         "port": 5001,
     },
     {
         "name": "Kavindu's Model (Wildlife Offence Prediction)",
-        "cwd": os.path.join(os.path.dirname(os.path.abspath(__file__)), "Kavindu"),
+        "cwd": os.path.join(ROOT_DIR, "Kavindu"),
         "cmd": [sys.executable, "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8002"],
         "port": 8002,
     },

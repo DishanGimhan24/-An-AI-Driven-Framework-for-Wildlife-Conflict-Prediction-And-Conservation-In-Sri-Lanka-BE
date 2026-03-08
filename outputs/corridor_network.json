@@ -18,7 +18,7 @@
       "eps_km": 0.5,
       "min_samples": 5
     },
-    "generated_at": "2026-03-08 10:57:18.960080"
+    "generated_at": "2026-03-08 15:49:38.033797"
   },
   "nodes": [
     {
@@ -34,7 +34,7 @@
       "active_hours": [
         4,
         12,
-        20
+        16
       ],
       "avg_ndvi": 0.8187931034482757,
       "avg_human_distance": 1733.901440141954,
@@ -889,8 +889,8 @@
         "Mihiri"
       ],
       "active_hours": [
-        20,
         16,
+        20,
         0
       ],
       "avg_ndvi": 0.7878999999999999,
@@ -1152,8 +1152,8 @@
         "Wira"
       ],
       "active_hours": [
-        8,
         4,
+        8,
         12
       ],
       "avg_ndvi": 0.8240725490196078,
@@ -1272,9 +1272,9 @@
         "Wira"
       ],
       "active_hours": [
-        16,
         4,
-        0
+        16,
+        20
       ],
       "avg_ndvi": 0.7663500000000001,
       "avg_human_distance": 942.2541740375,
@@ -1353,9 +1353,9 @@
         "Kumari"
       ],
       "active_hours": [
-        20,
         12,
-        4
+        20,
+        0
       ],
       "avg_ndvi": 0.7692159090909091,
       "avg_human_distance": 649.4514832029546,
@@ -1455,7 +1455,7 @@
       "active_hours": [
         16,
         0,
-        8
+        4
       ],
       "avg_ndvi": 0.7589833333333332,
       "avg_human_distance": 466.90050195833334,
@@ -1475,7 +1475,7 @@
       "active_hours": [
         8,
         12,
-        4
+        0
       ],
       "avg_ndvi": 0.8503727272727274,
       "avg_human_distance": 742.0545424886363,
@@ -1534,8 +1534,8 @@
       ],
       "active_hours": [
         0,
-        8,
-        4
+        4,
+        8
       ],
       "avg_ndvi": 0.7414,
       "avg_human_distance": 767.2894410222221,
@@ -1595,7 +1595,7 @@
       "active_hours": [
         0,
         4,
-        12
+        8
       ],
       "avg_ndvi": 0.764742857142857,
       "avg_human_distance": 1192.9981531333335,
@@ -1646,7 +1646,7 @@
       "node_id": 80,
       "center_lat": 7.782105553400001,
       "center_lon": 80.06302891800001,
-      "radius_meters": 184.82143446027155,
+      "radius_meters": 184.82143446027152,
       "elephant_count": 1,
       "sighting_count": 5,
       "elephants": [
@@ -2821,7 +2821,7 @@
       "active_hours": [
         8,
         4,
-        16
+        0
       ],
       "avg_ndvi": 0.8824545454545455,
       "avg_human_distance": 805.2206868363636,
@@ -3052,7 +3052,7 @@
       "node_id": 150,
       "center_lat": 8.086323387999999,
       "center_lon": 80.90280545,
-      "radius_meters": 241.5505319034735,
+      "radius_meters": 241.55053190347348,
       "elephant_count": 1,
       "sighting_count": 6,
       "elephants": [
@@ -3201,7 +3201,7 @@
       "active_hours": [
         20,
         0,
-        12
+        8
       ],
       "avg_ndvi": 0.29239,
       "avg_human_distance": 2689.7141466000003,
@@ -3248,8 +3248,8 @@
       "crossing_count": 21,
       "elephants": [
         "Samudra",
-        "Mihiri",
-        "Nancy"
+        "Nancy",
+        "Mihiri"
       ],
       "active_hours": [
         16,
@@ -3587,8 +3587,8 @@
       "crossing_count": 10,
       "elephants": [
         "Samudra",
-        "Mihiri",
-        "Nancy"
+        "Nancy",
+        "Mihiri"
       ],
       "active_hours": [
         20,
@@ -4019,8 +4019,8 @@
       "usage_count": 2,
       "crossing_count": 17,
       "elephants": [
-        "Udani",
-        "Sugala"
+        "Sugala",
+        "Udani"
       ],
       "active_hours": [
         20,
@@ -4782,8 +4782,8 @@
       "usage_count": 2,
       "crossing_count": 7,
       "elephants": [
-        "Udani",
-        "Sugala"
+        "Sugala",
+        "Udani"
       ],
       "active_hours": [
         12,
@@ -5206,8 +5206,8 @@
       "usage_count": 2,
       "crossing_count": 3,
       "elephants": [
-        "Udani",
-        "Sugala"
+        "Sugala",
+        "Udani"
       ],
       "active_hours": [
         16
@@ -5908,8 +5908,8 @@
       "usage_count": 2,
       "crossing_count": 26,
       "elephants": [
-        "Udani",
-        "Sugala"
+        "Sugala",
+        "Udani"
       ],
       "active_hours": [
         20,
@@ -8152,8 +8152,8 @@
       "usage_count": 2,
       "crossing_count": 9,
       "elephants": [
-        "Wira",
-        "Kumari"
+        "Kumari",
+        "Wira"
       ],
       "active_hours": [
         20,
@@ -8526,8 +8526,8 @@
       "usage_count": 2,
       "crossing_count": 4,
       "elephants": [
-        "Wira",
-        "Kumari"
+        "Kumari",
+        "Wira"
       ],
       "active_hours": [
         12,
@@ -8915,8 +8915,8 @@
       "usage_count": 2,
       "crossing_count": 7,
       "elephants": [
-        "Wira",
-        "Kumari"
+        "Kumari",
+        "Wira"
       ],
       "active_hours": [
         12,
@@ -8997,8 +8997,8 @@
       "usage_count": 2,
       "crossing_count": 10,
       "elephants": [
-        "Wira",
-        "Kumari"
+        "Kumari",
+        "Wira"
       ],
       "active_hours": [
         20,
@@ -9314,8 +9314,8 @@
       "usage_count": 2,
       "crossing_count": 6,
       "elephants": [
-        "Wira",
-        "Kumari"
+        "Kumari",
+        "Wira"
       ],
       "active_hours": [
         16,
@@ -9427,8 +9427,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Wira",
-        "Kumari"
+        "Kumari",
+        "Wira"
       ],
       "active_hours": [
         20
@@ -10203,8 +10203,8 @@
       "usage_count": 2,
       "crossing_count": 3,
       "elephants": [
-        "Wira",
-        "Kumari"
+        "Kumari",
+        "Wira"
       ],
       "active_hours": [
         4,
@@ -10986,8 +10986,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Wira",
-        "Kumari"
+        "Kumari",
+        "Wira"
       ],
       "active_hours": [
         12,
@@ -11321,8 +11321,8 @@
       "usage_count": 2,
       "crossing_count": 7,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         20,
@@ -11930,8 +11930,8 @@
       "usage_count": 2,
       "crossing_count": 3,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         16,
@@ -12148,8 +12148,8 @@
       "usage_count": 2,
       "crossing_count": 11,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         12,
@@ -12283,8 +12283,8 @@
       "usage_count": 2,
       "crossing_count": 16,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         20,
@@ -13669,8 +13669,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         16,
@@ -14874,8 +14874,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         12,
@@ -15143,8 +15143,8 @@
       "usage_count": 2,
       "crossing_count": 2,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         20,
@@ -16530,8 +16530,8 @@
       "usage_count": 2,
       "crossing_count": 3,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         8,
@@ -17481,8 +17481,8 @@
       "usage_count": 2,
       "crossing_count": 4,
       "elephants": [
-        "Madara",
-        "Chandi"
+        "Chandi",
+        "Madara"
       ],
       "active_hours": [
         0,
@@ -18146,8 +18146,8 @@
       "usage_count": 2,
       "crossing_count": 6,
       "elephants": [
-        "Soma",
-        "Chandi"
+        "Chandi",
+        "Soma"
       ],
       "active_hours": [
         16,
@@ -18386,8 +18386,8 @@
       "usage_count": 2,
       "crossing_count": 3,
       "elephants": [
-        "Mihiri",
-        "Hurululiya"
+        "Hurululiya",
+        "Mihiri"
       ],
       "active_hours": [
         12,
@@ -44479,7 +44479,7 @@
           "lon": 80.08850809124999
         }
       ],
-      "distance_meters": 2816.861554728044,
+      "distance_meters": 2816.8615547280438,
       "usage_count": 1,
       "crossing_count": 5,
       "elephants": [
@@ -75238,7 +75238,7 @@
           "lon": 81.22401343857143
         }
       ],
-      "distance_meters": 6755.083525557387,
+      "distance_meters": 6755.083525557386,
       "usage_count": 1,
       "crossing_count": 3,
       "elephants": [
