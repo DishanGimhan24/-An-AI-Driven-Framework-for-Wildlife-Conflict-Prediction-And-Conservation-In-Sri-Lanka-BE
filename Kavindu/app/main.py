@@ -79,7 +79,12 @@ risk_model = CatBoostClassifier()
 risk_model.load_model(RISK_MODEL_PATH)
 
 # Type model: sklearn pipeline joblib
-type_model = joblib.load(TYPE_MODEL_PATH)
+try:
+    type_model = joblib.load(TYPE_MODEL_PATH)
+    print(f"✓ Type model loaded from {TYPE_MODEL_PATH}")
+except Exception as e:
+    type_model = None
+    print(f"⚠ Type model failed to load ({e}). Type prediction will be unavailable.")
 
 # -------------------------------------------------
 # Load dataset for history lookup
@@ -184,10 +189,13 @@ def predict_for(region: str, location: str, year: int, month: int) -> dict:
     risk_percent = round(risk_prob * 100, 2)
     risk_level = risk_level_from_percent(risk_percent)
 
-    type_probs = type_model.predict_proba(X)[0]
-    classes = type_model.named_steps["model"].classes_
-    top3_idx = np.argsort(type_probs)[-3:][::-1]
-    top3 = [str(classes[i]) for i in top3_idx]
+    if type_model is not None:
+        type_probs = type_model.predict_proba(X)[0]
+        classes = type_model.named_steps["model"].classes_
+        top3_idx = np.argsort(type_probs)[-3:][::-1]
+        top3 = [str(classes[i]) for i in top3_idx]
+    else:
+        top3 = ["Unknown", "Unknown", "Unknown"]
 
     predicted_type = top3[0]
     if risk_level in ("Medium", "High") and predicted_type == "None":

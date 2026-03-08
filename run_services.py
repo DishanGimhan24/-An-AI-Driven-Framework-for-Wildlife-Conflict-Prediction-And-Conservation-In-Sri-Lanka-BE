@@ -28,6 +28,12 @@ SERVICES = [
         "cmd": [sys.executable, "app.py"],
         "port": 5001,
     },
+    {
+        "name": "Kavindu's Model (Wildlife Offence Prediction)",
+        "cwd": os.path.join(os.path.dirname(os.path.abspath(__file__)), "Kavindu"),
+        "cmd": [sys.executable, "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8002"],
+        "port": 8002,
+    },
 ]
 
 processes = []
@@ -52,9 +58,11 @@ def start_services():
     print(f"  Dishan Model (Corridor):         http://localhost:8000")
     print(f"  Himashi's Model (Collision Risk): http://localhost:8001")
     print(f"  Tharushi's Model (WC Prediction): http://localhost:5001")
+    print(f"  Kavindu's Model (Offence Pred):   http://localhost:8002")
     print(f"\n  Dishan docs:    http://localhost:8000/docs")
     print(f"  Himashi docs:   http://localhost:8001/docs")
     print(f"  Tharushi docs:  http://localhost:5001/")
+    print(f"  Kavindu docs:   http://localhost:8002/docs")
     print("=" * 60)
     print("Press Ctrl+C to stop all services\n")
 
