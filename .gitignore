@@ -1,3 +1,7 @@
+# Service manager logs and PID tracking
+logs/
+.service_pids.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

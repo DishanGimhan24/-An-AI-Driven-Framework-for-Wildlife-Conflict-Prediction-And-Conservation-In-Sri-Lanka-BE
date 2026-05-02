@@ -1,0 +1,5029 @@
+{
+  "version": "v3",
+  "features_full": [
+    "region_enc",
+    "hotspot_rank",
+    "hotspot_rank_norm",
+    "region_risk_rate",
+    "month_sin",
+    "month_cos",
+    "quarter",
+    "year_offset",
+    "is_dry",
+    "season_enc",
+    "hist_count",
+    "cases_last_month",
+    "cases_2months_ago",
+    "cases_same_month_last_year",
+    "rolling_3m_avg",
+    "rolling_6m_avg",
+    "offence_trend",
+    "pct_hunting_last_month",
+    "pct_meat_last_month",
+    "pct_weapons_last_month",
+    "num_unique_offences",
+    "rainfall_mm",
+    "is_drought_month",
+    "rain_vs_avg",
+    "is_festival_month",
+    "is_school_holiday",
+    "is_tourist_peak",
+    "is_harvest_season",
+    "dry_harvest_interaction",
+    "hist_pct_poaching",
+    "hist_pct_illegal_trade",
+    "hist_pct_weapons_and_tools",
+    "hist_pct_land_encroachment",
+    "hist_pct_resource_extraction",
+    "hist_pct_other"
+  ],
+  "offence_groups": [
+    "Poaching",
+    "Illegal Trade",
+    "Weapons & Tools",
+    "Land Encroachment",
+    "Resource Extraction",
+    "Other"
+  ],
+  "offence_merge_map": {
+    "Hunting/Killing": "Poaching",
+    "Tusk/Ivory": "Poaching",
+    "Animal Parts": "Poaching",
+    "Possession Animals": "Poaching",
+    "Transport Meat/Eggs": "Illegal Trade",
+    "Illegal Fishing": "Illegal Trade",
+    "Weapons/Traps": "Weapons & Tools",
+    "Encroachment": "Land Encroachment",
+    "Sand/Mining": "Land Encroachment",
+    "Illegal Entrance": "Land Encroachment",
+    "Illegal Timber/Logging": "Resource Extraction",
+    "Firewood Collection": "Resource Extraction",
+    "Protected Flora": "Resource Extraction",
+    "Set Fire": "Resource Extraction",
+    "Domestic Animal": "Other",
+    "Vehicle Accident": "Other",
+    "Unknown": "Other",
+    "Other": "Other"
+  },
+  "multilabel_classes": [
+    "Poaching",
+    "Illegal Trade",
+    "Weapons & Tools",
+    "Land Encroachment",
+    "Resource Extraction",
+    "Other"
+  ],
+  "regions": [
+    "Anuradhapura",
+    "Central",
+    "Eastern",
+    "Head Office-Flying Squad",
+    "Kilinochchi",
+    "Polonnaruwa",
+    "Puttalam",
+    "Southern",
+    "Trincomalee",
+    "Uwa",
+    "Vauniya",
+    "Wayamba",
+    "Western"
+  ],
+  "offence_types_orig": [
+    "Animal Parts",
+    "Domestic Animal",
+    "Encroachment",
+    "Hunting/Killing",
+    "Illegal Entrance",
+    "Illegal Fishing",
+    "Illegal Timber/Logging",
+    "Other",
+    "Possession Animals",
+    "Protected Flora",
+    "Sand/Mining",
+    "Set Fire",
+    "Transport Meat/Eggs",
+    "Tusk/Ivory",
+    "Unknown",
+    "Weapons/Traps"
+  ],
+  "offence_types_grouped": [
+    "Illegal Trade",
+    "Land Encroachment",
+    "Other",
+    "Poaching",
+    "Resource Extraction",
+    "Weapons & Tools"
+  ],
+  "risk_model_name": "XGBoost",
+  "offence_model_name": "Random Forest",
+  "risk_accuracy": 0.8485,
+  "offence_accuracy_16cls": 0.2576,
+  "offence_accuracy_6cls": 0.4394,
+  "multilabel_f1_samples": 0.7419,
+  "multilabel_hamming_loss": 0.2298,
+  "hist_pct_cols": [
+    "hist_pct_poaching",
+    "hist_pct_illegal_trade",
+    "hist_pct_weapons_and_tools",
+    "hist_pct_land_encroachment",
+    "hist_pct_resource_extraction",
+    "hist_pct_other"
+  ],
+  "hotspots": [
+    {
+      "region": "Polonnaruwa",
+      "total_cases": 655,
+      "hotspot_rank": 1
+    },
+    {
+      "region": "Eastern",
+      "total_cases": 553,
+      "hotspot_rank": 2
+    },
+    {
+      "region": "Anuradhapura",
+      "total_cases": 528,
+      "hotspot_rank": 3
+    },
+    {
+      "region": "Southern",
+      "total_cases": 374,
+      "hotspot_rank": 4
+    },
+    {
+      "region": "Uwa",
+      "total_cases": 321,
+      "hotspot_rank": 5
+    },
+    {
+      "region": "Kilinochchi",
+      "total_cases": 239,
+      "hotspot_rank": 6
+    },
+    {
+      "region": "Puttalam",
+      "total_cases": 237,
+      "hotspot_rank": 7
+    },
+    {
+      "region": "Western",
+      "total_cases": 222,
+      "hotspot_rank": 8
+    },
+    {
+      "region": "Wayamba",
+      "total_cases": 219,
+      "hotspot_rank": 9
+    },
+    {
+      "region": "Central",
+      "total_cases": 115,
+      "hotspot_rank": 10
+    },
+    {
+      "region": "Trincomalee",
+      "total_cases": 113,
+      "hotspot_rank": 11
+    },
+    {
+      "region": "Vauniya",
+      "total_cases": 109,
+      "hotspot_rank": 12
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "total_cases": 27,
+      "hotspot_rank": 13
+    }
+  ],
+  "region_coords": {
+    "Polonnaruwa": [
+      7.94,
+      81.0
+    ],
+    "Eastern": [
+      7.84,
+      81.67
+    ],
+    "Anuradhapura": [
+      8.33,
+      80.4
+    ],
+    "Southern": [
+      6.05,
+      80.73
+    ],
+    "Uwa": [
+      6.9,
+      81.2
+    ],
+    "Kilinochchi": [
+      9.4,
+      80.4
+    ],
+    "Puttalam": [
+      8.03,
+      79.84
+    ],
+    "Western": [
+      6.9,
+      79.86
+    ],
+    "Wayamba": [
+      7.73,
+      80.37
+    ],
+    "Central": [
+      7.29,
+      80.64
+    ],
+    "Trincomalee": [
+      8.57,
+      81.23
+    ],
+    "Vauniya": [
+      8.76,
+      80.5
+    ],
+    "Head Office-Flying Squad": [
+      6.9,
+      79.86
+    ]
+  },
+  "sl_monthly_rainfall": {
+    "1": 89,
+    "2": 69,
+    "3": 97,
+    "4": 158,
+    "5": 213,
+    "6": 150,
+    "7": 109,
+    "8": 99,
+    "9": 134,
+    "10": 241,
+    "11": 318,
+    "12": 189
+  },
+  "festival_months": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 1
+  },
+  "school_holidays": {
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 1,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 1,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 1
+  },
+  "tourist_peak": {
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 0,
+    "5": 0,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 1
+  },
+  "harvest_months": {
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 0,
+    "11": 0,
+    "12": 0
+  },
+  "hist_region_month": [
+    {
+      "region": "Anuradhapura",
+      "month_num": 1,
+      "hist_region_month_count": 89
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 2,
+      "hist_region_month_count": 49
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 3,
+      "hist_region_month_count": 52
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 4,
+      "hist_region_month_count": 39
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 5,
+      "hist_region_month_count": 47
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 6,
+      "hist_region_month_count": 40
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 7,
+      "hist_region_month_count": 45
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 8,
+      "hist_region_month_count": 55
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 9,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 10,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 11,
+      "hist_region_month_count": 37
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 12,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 1,
+      "hist_region_month_count": 89
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 2,
+      "hist_region_month_count": 49
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 3,
+      "hist_region_month_count": 52
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 4,
+      "hist_region_month_count": 39
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 5,
+      "hist_region_month_count": 47
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 6,
+      "hist_region_month_count": 40
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 7,
+      "hist_region_month_count": 45
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 8,
+      "hist_region_month_count": 55
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 9,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 11,
+      "hist_region_month_count": 37
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 12,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 1,
+      "hist_region_month_count": 89
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 2,
+      "hist_region_month_count": 49
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 3,
+      "hist_region_month_count": 52
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 4,
+      "hist_region_month_count": 39
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 5,
+      "hist_region_month_count": 47
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 6,
+      "hist_region_month_count": 40
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 7,
+      "hist_region_month_count": 45
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 8,
+      "hist_region_month_count": 55
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 9,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 11,
+      "hist_region_month_count": 37
+    },
+    {
+      "region": "Anuradhapura",
+      "month_num": 12,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Central",
+      "month_num": 1,
+      "hist_region_month_count": 11
+    },
+    {
+      "region": "Central",
+      "month_num": 2,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Central",
+      "month_num": 3,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Central",
+      "month_num": 4,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Central",
+      "month_num": 5,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Central",
+      "month_num": 6,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Central",
+      "month_num": 7,
+      "hist_region_month_count": 10
+    },
+    {
+      "region": "Central",
+      "month_num": 8,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Central",
+      "month_num": 9,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Central",
+      "month_num": 10,
+      "hist_region_month_count": 4
+    },
+    {
+      "region": "Central",
+      "month_num": 11,
+      "hist_region_month_count": 8
+    },
+    {
+      "region": "Central",
+      "month_num": 12,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Central",
+      "month_num": 1,
+      "hist_region_month_count": 11
+    },
+    {
+      "region": "Central",
+      "month_num": 2,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Central",
+      "month_num": 3,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Central",
+      "month_num": 4,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Central",
+      "month_num": 5,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Central",
+      "month_num": 6,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Central",
+      "month_num": 7,
+      "hist_region_month_count": 10
+    },
+    {
+      "region": "Central",
+      "month_num": 8,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Central",
+      "month_num": 9,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Central",
+      "month_num": 11,
+      "hist_region_month_count": 8
+    },
+    {
+      "region": "Central",
+      "month_num": 12,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Eastern",
+      "month_num": 2,
+      "hist_region_month_count": 78
+    },
+    {
+      "region": "Eastern",
+      "month_num": 3,
+      "hist_region_month_count": 30
+    },
+    {
+      "region": "Eastern",
+      "month_num": 4,
+      "hist_region_month_count": 48
+    },
+    {
+      "region": "Eastern",
+      "month_num": 5,
+      "hist_region_month_count": 44
+    },
+    {
+      "region": "Eastern",
+      "month_num": 6,
+      "hist_region_month_count": 84
+    },
+    {
+      "region": "Eastern",
+      "month_num": 8,
+      "hist_region_month_count": 46
+    },
+    {
+      "region": "Eastern",
+      "month_num": 9,
+      "hist_region_month_count": 43
+    },
+    {
+      "region": "Eastern",
+      "month_num": 10,
+      "hist_region_month_count": 33
+    },
+    {
+      "region": "Eastern",
+      "month_num": 12,
+      "hist_region_month_count": 49
+    },
+    {
+      "region": "Eastern",
+      "month_num": 1,
+      "hist_region_month_count": 44
+    },
+    {
+      "region": "Eastern",
+      "month_num": 2,
+      "hist_region_month_count": 78
+    },
+    {
+      "region": "Eastern",
+      "month_num": 3,
+      "hist_region_month_count": 30
+    },
+    {
+      "region": "Eastern",
+      "month_num": 4,
+      "hist_region_month_count": 48
+    },
+    {
+      "region": "Eastern",
+      "month_num": 5,
+      "hist_region_month_count": 44
+    },
+    {
+      "region": "Eastern",
+      "month_num": 6,
+      "hist_region_month_count": 84
+    },
+    {
+      "region": "Eastern",
+      "month_num": 7,
+      "hist_region_month_count": 27
+    },
+    {
+      "region": "Eastern",
+      "month_num": 8,
+      "hist_region_month_count": 46
+    },
+    {
+      "region": "Eastern",
+      "month_num": 9,
+      "hist_region_month_count": 43
+    },
+    {
+      "region": "Eastern",
+      "month_num": 10,
+      "hist_region_month_count": 33
+    },
+    {
+      "region": "Eastern",
+      "month_num": 11,
+      "hist_region_month_count": 27
+    },
+    {
+      "region": "Eastern",
+      "month_num": 12,
+      "hist_region_month_count": 49
+    },
+    {
+      "region": "Eastern",
+      "month_num": 1,
+      "hist_region_month_count": 44
+    },
+    {
+      "region": "Eastern",
+      "month_num": 2,
+      "hist_region_month_count": 78
+    },
+    {
+      "region": "Eastern",
+      "month_num": 4,
+      "hist_region_month_count": 48
+    },
+    {
+      "region": "Eastern",
+      "month_num": 5,
+      "hist_region_month_count": 44
+    },
+    {
+      "region": "Eastern",
+      "month_num": 6,
+      "hist_region_month_count": 84
+    },
+    {
+      "region": "Eastern",
+      "month_num": 7,
+      "hist_region_month_count": 27
+    },
+    {
+      "region": "Eastern",
+      "month_num": 8,
+      "hist_region_month_count": 46
+    },
+    {
+      "region": "Eastern",
+      "month_num": 11,
+      "hist_region_month_count": 27
+    },
+    {
+      "region": "Eastern",
+      "month_num": 12,
+      "hist_region_month_count": 49
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 1,
+      "hist_region_month_count": 7
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 5,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 10,
+      "hist_region_month_count": 1
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 11,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 5,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 6,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 8,
+      "hist_region_month_count": 1
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 1,
+      "hist_region_month_count": 7
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 2,
+      "hist_region_month_count": 3
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 3,
+      "hist_region_month_count": 3
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 4,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 6,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 7,
+      "hist_region_month_count": 4
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "month_num": 11,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 1,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 2,
+      "hist_region_month_count": 15
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 3,
+      "hist_region_month_count": 7
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 6,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 7,
+      "hist_region_month_count": 136
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 8,
+      "hist_region_month_count": 10
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 9,
+      "hist_region_month_count": 7
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 10,
+      "hist_region_month_count": 10
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 11,
+      "hist_region_month_count": 19
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 12,
+      "hist_region_month_count": 8
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 2,
+      "hist_region_month_count": 15
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 3,
+      "hist_region_month_count": 7
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 4,
+      "hist_region_month_count": 4
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 6,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 7,
+      "hist_region_month_count": 136
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 8,
+      "hist_region_month_count": 10
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 9,
+      "hist_region_month_count": 7
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 10,
+      "hist_region_month_count": 10
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 11,
+      "hist_region_month_count": 19
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 2,
+      "hist_region_month_count": 15
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 4,
+      "hist_region_month_count": 4
+    },
+    {
+      "region": "Kilinochchi",
+      "month_num": 6,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 1,
+      "hist_region_month_count": 41
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 2,
+      "hist_region_month_count": 73
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 3,
+      "hist_region_month_count": 55
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 4,
+      "hist_region_month_count": 41
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 5,
+      "hist_region_month_count": 77
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 6,
+      "hist_region_month_count": 65
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 7,
+      "hist_region_month_count": 38
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 8,
+      "hist_region_month_count": 90
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 9,
+      "hist_region_month_count": 57
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 10,
+      "hist_region_month_count": 37
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 11,
+      "hist_region_month_count": 52
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 1,
+      "hist_region_month_count": 41
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 2,
+      "hist_region_month_count": 73
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 3,
+      "hist_region_month_count": 55
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 4,
+      "hist_region_month_count": 41
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 5,
+      "hist_region_month_count": 77
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 6,
+      "hist_region_month_count": 65
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 7,
+      "hist_region_month_count": 38
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 8,
+      "hist_region_month_count": 90
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 9,
+      "hist_region_month_count": 57
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 10,
+      "hist_region_month_count": 37
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 11,
+      "hist_region_month_count": 52
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 12,
+      "hist_region_month_count": 29
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 2,
+      "hist_region_month_count": 73
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 3,
+      "hist_region_month_count": 55
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 5,
+      "hist_region_month_count": 77
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 11,
+      "hist_region_month_count": 52
+    },
+    {
+      "region": "Polonnaruwa",
+      "month_num": 12,
+      "hist_region_month_count": 29
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 1,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 2,
+      "hist_region_month_count": 37
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 3,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 4,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 5,
+      "hist_region_month_count": 11
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 6,
+      "hist_region_month_count": 17
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 7,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 8,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 9,
+      "hist_region_month_count": 4
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 10,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 12,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 1,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 2,
+      "hist_region_month_count": 37
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 3,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 4,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 5,
+      "hist_region_month_count": 11
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 6,
+      "hist_region_month_count": 17
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 7,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 8,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 10,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 11,
+      "hist_region_month_count": 8
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 12,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 1,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 2,
+      "hist_region_month_count": 37
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 3,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 4,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 5,
+      "hist_region_month_count": 11
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 6,
+      "hist_region_month_count": 17
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 7,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 8,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 10,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 11,
+      "hist_region_month_count": 8
+    },
+    {
+      "region": "Puttalam",
+      "month_num": 12,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Southern",
+      "month_num": 4,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Southern",
+      "month_num": 5,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Southern",
+      "month_num": 10,
+      "hist_region_month_count": 29
+    },
+    {
+      "region": "Southern",
+      "month_num": 11,
+      "hist_region_month_count": 27
+    },
+    {
+      "region": "Southern",
+      "month_num": 12,
+      "hist_region_month_count": 47
+    },
+    {
+      "region": "Southern",
+      "month_num": 1,
+      "hist_region_month_count": 42
+    },
+    {
+      "region": "Southern",
+      "month_num": 2,
+      "hist_region_month_count": 36
+    },
+    {
+      "region": "Southern",
+      "month_num": 3,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Southern",
+      "month_num": 4,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Southern",
+      "month_num": 5,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Southern",
+      "month_num": 6,
+      "hist_region_month_count": 27
+    },
+    {
+      "region": "Southern",
+      "month_num": 7,
+      "hist_region_month_count": 42
+    },
+    {
+      "region": "Southern",
+      "month_num": 8,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Southern",
+      "month_num": 9,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Southern",
+      "month_num": 10,
+      "hist_region_month_count": 29
+    },
+    {
+      "region": "Southern",
+      "month_num": 11,
+      "hist_region_month_count": 27
+    },
+    {
+      "region": "Southern",
+      "month_num": 12,
+      "hist_region_month_count": 47
+    },
+    {
+      "region": "Southern",
+      "month_num": 1,
+      "hist_region_month_count": 42
+    },
+    {
+      "region": "Southern",
+      "month_num": 2,
+      "hist_region_month_count": 36
+    },
+    {
+      "region": "Southern",
+      "month_num": 3,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Southern",
+      "month_num": 4,
+      "hist_region_month_count": 25
+    },
+    {
+      "region": "Southern",
+      "month_num": 5,
+      "hist_region_month_count": 31
+    },
+    {
+      "region": "Southern",
+      "month_num": 6,
+      "hist_region_month_count": 27
+    },
+    {
+      "region": "Southern",
+      "month_num": 7,
+      "hist_region_month_count": 42
+    },
+    {
+      "region": "Southern",
+      "month_num": 8,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Southern",
+      "month_num": 12,
+      "hist_region_month_count": 47
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 1,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 2,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 3,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 4,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 5,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 6,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 1,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 2,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 3,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 4,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 5,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 6,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 7,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 9,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 10,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 11,
+      "hist_region_month_count": 8
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 12,
+      "hist_region_month_count": 11
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 1,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 2,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 3,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 4,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 5,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 6,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 7,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 8,
+      "hist_region_month_count": 2
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 10,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 11,
+      "hist_region_month_count": 8
+    },
+    {
+      "region": "Trincomalee",
+      "month_num": 12,
+      "hist_region_month_count": 11
+    },
+    {
+      "region": "Uwa",
+      "month_num": 4,
+      "hist_region_month_count": 24
+    },
+    {
+      "region": "Uwa",
+      "month_num": 5,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Uwa",
+      "month_num": 1,
+      "hist_region_month_count": 41
+    },
+    {
+      "region": "Uwa",
+      "month_num": 2,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Uwa",
+      "month_num": 3,
+      "hist_region_month_count": 33
+    },
+    {
+      "region": "Uwa",
+      "month_num": 4,
+      "hist_region_month_count": 24
+    },
+    {
+      "region": "Uwa",
+      "month_num": 5,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Uwa",
+      "month_num": 6,
+      "hist_region_month_count": 46
+    },
+    {
+      "region": "Uwa",
+      "month_num": 7,
+      "hist_region_month_count": 16
+    },
+    {
+      "region": "Uwa",
+      "month_num": 8,
+      "hist_region_month_count": 36
+    },
+    {
+      "region": "Uwa",
+      "month_num": 9,
+      "hist_region_month_count": 13
+    },
+    {
+      "region": "Uwa",
+      "month_num": 10,
+      "hist_region_month_count": 19
+    },
+    {
+      "region": "Uwa",
+      "month_num": 11,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Uwa",
+      "month_num": 12,
+      "hist_region_month_count": 11
+    },
+    {
+      "region": "Uwa",
+      "month_num": 1,
+      "hist_region_month_count": 41
+    },
+    {
+      "region": "Uwa",
+      "month_num": 2,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Uwa",
+      "month_num": 3,
+      "hist_region_month_count": 33
+    },
+    {
+      "region": "Uwa",
+      "month_num": 4,
+      "hist_region_month_count": 24
+    },
+    {
+      "region": "Uwa",
+      "month_num": 5,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Uwa",
+      "month_num": 6,
+      "hist_region_month_count": 46
+    },
+    {
+      "region": "Uwa",
+      "month_num": 11,
+      "hist_region_month_count": 28
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 10,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 11,
+      "hist_region_month_count": 22
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 1,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 2,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 3,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 4,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 5,
+      "hist_region_month_count": 10
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 6,
+      "hist_region_month_count": 5
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 7,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 8,
+      "hist_region_month_count": 8
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 9,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 11,
+      "hist_region_month_count": 22
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 1,
+      "hist_region_month_count": 14
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 2,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Vauniya",
+      "month_num": 3,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 1,
+      "hist_region_month_count": 23
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 2,
+      "hist_region_month_count": 20
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 3,
+      "hist_region_month_count": 19
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 4,
+      "hist_region_month_count": 22
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 2,
+      "hist_region_month_count": 20
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 3,
+      "hist_region_month_count": 19
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 4,
+      "hist_region_month_count": 22
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 5,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 6,
+      "hist_region_month_count": 20
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 8,
+      "hist_region_month_count": 32
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 9,
+      "hist_region_month_count": 23
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 10,
+      "hist_region_month_count": 16
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 11,
+      "hist_region_month_count": 19
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 12,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 1,
+      "hist_region_month_count": 23
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 2,
+      "hist_region_month_count": 20
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 3,
+      "hist_region_month_count": 19
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 4,
+      "hist_region_month_count": 22
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 5,
+      "hist_region_month_count": 9
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 6,
+      "hist_region_month_count": 20
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 7,
+      "hist_region_month_count": 4
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 8,
+      "hist_region_month_count": 32
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 9,
+      "hist_region_month_count": 23
+    },
+    {
+      "region": "Wayamba",
+      "month_num": 12,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Western",
+      "month_num": 1,
+      "hist_region_month_count": 17
+    },
+    {
+      "region": "Western",
+      "month_num": 2,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Western",
+      "month_num": 3,
+      "hist_region_month_count": 20
+    },
+    {
+      "region": "Western",
+      "month_num": 4,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Western",
+      "month_num": 5,
+      "hist_region_month_count": 16
+    },
+    {
+      "region": "Western",
+      "month_num": 6,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Western",
+      "month_num": 8,
+      "hist_region_month_count": 42
+    },
+    {
+      "region": "Western",
+      "month_num": 9,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Western",
+      "month_num": 11,
+      "hist_region_month_count": 7
+    },
+    {
+      "region": "Western",
+      "month_num": 12,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Western",
+      "month_num": 1,
+      "hist_region_month_count": 17
+    },
+    {
+      "region": "Western",
+      "month_num": 2,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Western",
+      "month_num": 3,
+      "hist_region_month_count": 20
+    },
+    {
+      "region": "Western",
+      "month_num": 4,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Western",
+      "month_num": 5,
+      "hist_region_month_count": 16
+    },
+    {
+      "region": "Western",
+      "month_num": 6,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Western",
+      "month_num": 7,
+      "hist_region_month_count": 24
+    },
+    {
+      "region": "Western",
+      "month_num": 8,
+      "hist_region_month_count": 42
+    },
+    {
+      "region": "Western",
+      "month_num": 9,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Western",
+      "month_num": 10,
+      "hist_region_month_count": 10
+    },
+    {
+      "region": "Western",
+      "month_num": 11,
+      "hist_region_month_count": 7
+    },
+    {
+      "region": "Western",
+      "month_num": 12,
+      "hist_region_month_count": 6
+    },
+    {
+      "region": "Western",
+      "month_num": 1,
+      "hist_region_month_count": 17
+    },
+    {
+      "region": "Western",
+      "month_num": 2,
+      "hist_region_month_count": 21
+    },
+    {
+      "region": "Western",
+      "month_num": 3,
+      "hist_region_month_count": 20
+    },
+    {
+      "region": "Western",
+      "month_num": 4,
+      "hist_region_month_count": 12
+    },
+    {
+      "region": "Western",
+      "month_num": 5,
+      "hist_region_month_count": 16
+    },
+    {
+      "region": "Western",
+      "month_num": 6,
+      "hist_region_month_count": 26
+    },
+    {
+      "region": "Western",
+      "month_num": 7,
+      "hist_region_month_count": 24
+    },
+    {
+      "region": "Western",
+      "month_num": 8,
+      "hist_region_month_count": 42
+    },
+    {
+      "region": "Western",
+      "month_num": 12,
+      "hist_region_month_count": 6
+    }
+  ],
+  "region_offence_map": {
+    "Kilinochchi": "Land Encroachment",
+    "Western": "Other",
+    "Eastern": "Other",
+    "Puttalam": "Weapons & Tools",
+    "Anuradhapura": "Weapons & Tools",
+    "Southern": "Other",
+    "Vauniya": "Illegal Trade",
+    "Trincomalee": "Other",
+    "Polonnaruwa": "Land Encroachment",
+    "Uwa": "Land Encroachment",
+    "Wayamba": "Weapons & Tools",
+    "Head Office-Flying Squad": "Poaching",
+    "Central": "Other"
+  },
+  "rainfall_lookup": [
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 4.3
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 1.6
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 9.7
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 3.5
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 2.8
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 1.6
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 7.2
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 7.6
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 9.3
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 4.5
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 3.8
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 6.4
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 2.6
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 3.3
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 5.3
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 0.6
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 0.2
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 2.4
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 10.5
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 16.9
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 15.0
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 5.7
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 5.8
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.4
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 1.3
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 6.2
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 0.2
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 3.8
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 6.2
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 14.7
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.5
+    },
+    {
+      "region": "Anuradhapura",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 3.8
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 3.7
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 8.0
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 2.1
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 9.7
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 4.2
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 3.6
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 6.1
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 2.7
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 7.6
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 9.4
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 9.4
+    },
+    {
+      "region": "Central",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 5.7
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 3.5
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 4.5
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 3.5
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 5.3
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 5.0
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 2.0
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 1.5
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 1.3
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 13.6
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 15.7
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 15.1
+    },
+    {
+      "region": "Central",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 6.5
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 9.5
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 2.8
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 6.6
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 2.0
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 1.6
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 4.5
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 1.5
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 12.1
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.7
+    },
+    {
+      "region": "Central",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 4.3
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 5.3
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 7.2
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 2.1
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 8.2
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 2.5
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.5
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 2.4
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 4.1
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 1.7
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 9.4
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 8.0
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 13.8
+    },
+    {
+      "region": "Eastern",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 5.5
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 5.2
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 5.5
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 2.2
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 4.9
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 4.8
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 0.5
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 4.3
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 22.4
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 16.8
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 20.0
+    },
+    {
+      "region": "Eastern",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 7.4
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 9.2
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.6
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 1.8
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 1.2
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 0.4
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 8.8
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 19.1
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 5.7
+    },
+    {
+      "region": "Eastern",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 5.0
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 2.2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 5.6
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 2.7
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 14.2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 9.7
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 3.8
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 3.6
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 6.8
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 3.2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 10.7
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 9.1
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 8.4
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 6.7
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 2.9
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 4.6
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 8.0
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 5.3
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 2.6
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 13.6
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 18.0
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 16.8
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 11.2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 8.1
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 5.8
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 1.9
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 5.5
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 10.4
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 5.2
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 3.7
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 5.4
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 7.0
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 11.9
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Head Office-Flying Squad",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 5.4
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 3.9
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 1.0
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 5.5
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 1.3
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 6.0
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 3.1
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 1.9
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 9.6
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 9.6
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 8.7
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 4.6
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 2.4
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 5.0
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 1.7
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 1.8
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 6.0
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 1.3
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 2.9
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 7.1
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 16.1
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 14.7
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 5.0
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 4.8
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.1
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 4.6
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 5.6
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 15.2
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.7
+    },
+    {
+      "region": "Kilinochchi",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 3.7
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 6.5
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 7.1
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 1.7
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 8.8
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 2.0
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.0
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 3.0
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 3.8
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 2.0
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 11.9
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 8.8
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 10.8
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 5.6
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 5.6
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 12.6
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 3.3
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 4.3
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 0.3
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 4.1
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 17.2
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 24.1
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 23.7
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 8.4
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 11.6
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 1.7
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 1.0
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 0.4
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 4.4
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 6.4
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 20.0
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 6.3
+    },
+    {
+      "region": "Polonnaruwa",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 5.2
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 1.9
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 3.3
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 8.5
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 4.1
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 2.7
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 2.8
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 1.7
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 5.8
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 8.4
+    },
+    {
+      "region": "Puttalam",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 4.1
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 2.6
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 2.8
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 2.6
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 4.4
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 4.7
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 0.6
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 4.4
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 10.0
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 14.7
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 11.4
+    },
+    {
+      "region": "Puttalam",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 5.0
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 4.6
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.3
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 0.5
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 2.3
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 7.9
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 1.7
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 4.8
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 6.3
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 10.3
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.4
+    },
+    {
+      "region": "Puttalam",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 3.8
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 4.1
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 5.0
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 3.6
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 9.6
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 8.7
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 4.2
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 4.9
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 5.6
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 2.7
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 10.5
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 9.9
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 6.2
+    },
+    {
+      "region": "Southern",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 6.2
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 3.7
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 7.5
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 5.6
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 6.6
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 4.9
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 3.1
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 3.6
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 17.4
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 22.7
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 14.3
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 14.2
+    },
+    {
+      "region": "Southern",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 9.2
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 10.3
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 1.2
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 1.6
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 4.3
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 6.9
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 3.5
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 3.5
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 4.9
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 3.1
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 5.2
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 10.2
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.9
+    },
+    {
+      "region": "Southern",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 5.0
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 5.2
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 5.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 12.0
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 1.6
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.3
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 3.5
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 2.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 2.0
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 9.4
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 9.1
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 9.3
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 5.3
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 5.5
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 8.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 3.0
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 3.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 5.2
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 1.0
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 0.3
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 2.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 11.0
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 18.8
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 17.3
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 6.5
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 8.2
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.6
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 1.2
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 6.4
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 0.4
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 6.8
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 18.7
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 5.4
+    },
+    {
+      "region": "Trincomalee",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 4.5
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 5.2
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 6.3
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 3.1
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 13.7
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 6.8
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 2.9
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 4.5
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 7.8
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 2.5
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 10.4
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 11.8
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 11.5
+    },
+    {
+      "region": "Uwa",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 7.2
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 6.3
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 4.8
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 7.8
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 2.3
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 2.9
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 14.1
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 23.8
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 13.2
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 17.9
+    },
+    {
+      "region": "Uwa",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 8.7
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 11.2
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 2.9
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 6.0
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 2.5
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 1.9
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 2.6
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 7.0
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 13.0
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Uwa",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 5.1
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 3.3
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 1.2
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 7.7
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.3
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 4.3
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 2.8
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 1.6
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 8.6
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 8.0
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 8.9
+    },
+    {
+      "region": "Vauniya",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 4.4
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 3.1
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 6.0
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 1.9
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 2.3
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 5.8
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 0.7
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 0.3
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 2.3
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 8.8
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 16.9
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 15.4
+    },
+    {
+      "region": "Vauniya",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 5.4
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 5.1
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.2
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 0.8
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 1.0
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 4.9
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 0.3
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 3.7
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 5.9
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 16.0
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.2
+    },
+    {
+      "region": "Vauniya",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 3.7
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 3.7
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 8.0
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 2.1
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 9.7
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 4.2
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 1.4
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 3.6
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 6.1
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 2.7
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 7.6
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 9.4
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 9.4
+    },
+    {
+      "region": "Wayamba",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 5.7
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 3.5
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 4.5
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 3.5
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 5.3
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 5.0
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 2.0
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 1.5
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 1.3
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 13.6
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 15.7
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 15.1
+    },
+    {
+      "region": "Wayamba",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 6.5
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 9.5
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 1.1
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 2.8
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 6.6
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 2.0
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 1.6
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 4.5
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 1.5
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 12.1
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.7
+    },
+    {
+      "region": "Wayamba",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 4.3
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 1,
+      "rainfall_mm": 2.2
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 2,
+      "rainfall_mm": 5.6
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 3,
+      "rainfall_mm": 2.7
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 4,
+      "rainfall_mm": 14.2
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 5,
+      "rainfall_mm": 9.7
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 6,
+      "rainfall_mm": 3.8
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 7,
+      "rainfall_mm": 3.6
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 8,
+      "rainfall_mm": 6.8
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 9,
+      "rainfall_mm": 3.2
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 10,
+      "rainfall_mm": 10.7
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 11,
+      "rainfall_mm": 9.1
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 12,
+      "rainfall_mm": 8.4
+    },
+    {
+      "region": "Western",
+      "year": 2022,
+      "month_num": 13,
+      "rainfall_mm": 6.7
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 1,
+      "rainfall_mm": 2.9
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 2,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 3,
+      "rainfall_mm": 4.6
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 4,
+      "rainfall_mm": 7.3
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 5,
+      "rainfall_mm": 8.0
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 6,
+      "rainfall_mm": 5.3
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 7,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 8,
+      "rainfall_mm": 2.6
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 9,
+      "rainfall_mm": 13.6
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 10,
+      "rainfall_mm": 18.0
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 11,
+      "rainfall_mm": 16.8
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 12,
+      "rainfall_mm": 11.2
+    },
+    {
+      "region": "Western",
+      "year": 2023,
+      "month_num": 13,
+      "rainfall_mm": 8.1
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 1,
+      "rainfall_mm": 5.8
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 2,
+      "rainfall_mm": 0.9
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 3,
+      "rainfall_mm": 1.9
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 4,
+      "rainfall_mm": 5.5
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 5,
+      "rainfall_mm": 10.4
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 6,
+      "rainfall_mm": 5.2
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 7,
+      "rainfall_mm": 3.7
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 8,
+      "rainfall_mm": 5.4
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 9,
+      "rainfall_mm": 3.4
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 10,
+      "rainfall_mm": 7.0
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 11,
+      "rainfall_mm": 11.9
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 12,
+      "rainfall_mm": 4.0
+    },
+    {
+      "region": "Western",
+      "year": 2024,
+      "month_num": 13,
+      "rainfall_mm": 5.4
+    }
+  ]
+}
