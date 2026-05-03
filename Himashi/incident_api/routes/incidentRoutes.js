@@ -21,4 +21,13 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.post("/add", async (req, res) => {
+  try {
+    const incident = await Incident.create(req.body);
+    res.status(201).json(incident);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
 module.exports = router;
