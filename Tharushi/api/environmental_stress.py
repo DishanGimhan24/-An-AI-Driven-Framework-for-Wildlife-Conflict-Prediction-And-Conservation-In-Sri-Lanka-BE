@@ -58,6 +58,21 @@ MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
 
 BASELINE_YEARS = (2020, 2021, 2022, 2023, 2024)
 
+# Fully urban districts with no elephant habitat — ecological stress here
+# has no bearing on elephant-human conflict, so scores are forced to 0.
+_NON_ELEPHANT_DISTRICTS = {'Colombo', 'Gampaha'}
+
+# Dry-zone districts where May–Sep IS the primary dry season.
+# Wet-zone and highland districts (Nuwara Eliya, Kandy, Ratnapura, etc.)
+# actually receive their heaviest rainfall during May–Sep (SW monsoon), so
+# the dry-season stress bonus must NOT be applied to them.
+_DRY_ZONE_DISTRICTS = {
+    'Anuradhapura', 'Polonnaruwa', 'Hambantota', 'Monaragala',
+    'Ampara', 'Batticaloa', 'Trincomalee', 'Vavuniya', 'Mannar',
+    'Mullaitivu', 'Kilinochchi', 'Jaffna', 'Kurunegala', 'Puttalam',
+    'Matale',
+}
+
 # NASA POWER grid points covering Sri Lanka (0.5° × 0.625° grid)
 _RAINFALL_GRID_LATS = [6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0]
 _RAINFALL_GRID_LONS = [79.375, 80.0, 80.625, 81.25, 81.875, 82.5]
@@ -133,12 +148,12 @@ def _get_current_rainfall_30day(grid_lat, grid_lon, year, month):
     return _compute_rainfall_baseline(grid_lat, grid_lon, month)
 
 
-def _compute_stress_score(ndvi_anomaly, rainfall_anomaly, rainfall_baseline, calendar_month):
+def _compute_stress_score(ndvi_anomaly, rainfall_anomaly, rainfall_baseline, calendar_month, is_dry_zone=True):
     """
     Composite stress score 0–100.
       NDVI deficit:     up to 40 pts  (below baseline → more stress)
       Rainfall deficit: up to 40 pts  (below baseline → more stress)
-      Dry season:       up to 20 pts
+      Dry season:       up to 20 pts  (only for dry-zone districts)
     """
     # NDVI component — negative anomaly means stressed vegetation
     ndvi_component = float(np.clip(-ndvi_anomaly * 100, 0, 40))
@@ -150,8 +165,9 @@ def _compute_stress_score(ndvi_anomaly, rainfall_anomaly, rainfall_baseline, cal
         deficit_pct = 0.0
     rainfall_component = deficit_pct * 40.0
 
-    # Dry season bonus
-    dry_component = 20.0 if calendar_month in DRY_SEASON_MONTHS else 0.0
+    # Dry season bonus — only valid for dry-zone districts where May–Sep is dry.
+    # Wet-zone/highland districts receive SW monsoon rain during these months.
+    dry_component = 20.0 if (is_dry_zone and calendar_month in DRY_SEASON_MONTHS) else 0.0
 
     return float(np.clip(ndvi_component + rainfall_component + dry_component, 0.0, 100.0))
 
@@ -231,7 +247,12 @@ def _process_district_stress(args):
     baseline_rain = _compute_rainfall_baseline(grid_lat, grid_lon, month)
     rainfall_anomaly = current_rain - baseline_rain
 
-    score = _compute_stress_score(ndvi_anomaly, rainfall_anomaly, baseline_rain, month)
+    is_dry_zone = district_name in _DRY_ZONE_DISTRICTS
+    score = _compute_stress_score(ndvi_anomaly, rainfall_anomaly, baseline_rain, month, is_dry_zone)
+
+    # Urban districts have no elephant habitat — stress is ecologically irrelevant
+    if district_name in _NON_ELEPHANT_DISTRICTS:
+        score = 0.0
 
     return {
         'district': district_name,
