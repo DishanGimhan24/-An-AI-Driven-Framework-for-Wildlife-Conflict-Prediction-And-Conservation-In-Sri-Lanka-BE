@@ -102,6 +102,7 @@ def get_district_heatmap():
     """Get district-level risk classification"""
     try:
         date = request.args.get('date')
+        regenerate = request.args.get('regenerate', 'false').lower() == 'true'
 
         if not date:
             date = datetime.now().strftime('%Y-%m-%d')
@@ -114,6 +115,21 @@ def get_district_heatmap():
                 'message': 'Invalid date format. Use YYYY-MM-DD'
             }), 400
 
+        # Per-date cache (25 ML predictions per request otherwise)
+        districts_cache_dir = os.path.join(MODELS_DIR, 'districts')
+        os.makedirs(districts_cache_dir, exist_ok=True)
+        cache_path = os.path.join(districts_cache_dir, f'district_risk_{date}.json')
+
+        if not regenerate and os.path.exists(cache_path):
+            import json
+            with open(cache_path, 'r') as f:
+                cached = json.load(f)
+            return jsonify({
+                'status': 'success',
+                'data': cached,
+                'cached': True
+            }), 200
+
         # Get district classifications
         district_risks = get_district_risk_levels(date)
 
@@ -122,18 +138,25 @@ def get_district_heatmap():
         medium_count = sum(1 for d in district_risks if d['risk_level'] == 'MEDIUM')
         low_count = sum(1 for d in district_risks if d['risk_level'] == 'LOW')
 
+        payload = {
+            'date': date,
+            'districts': district_risks,
+            'summary': {
+                'total_districts': len(district_risks),
+                'high_risk_districts': high_count,
+                'medium_risk_districts': medium_count,
+                'low_risk_districts': low_count
+            }
+        }
+
+        import json
+        with open(cache_path, 'w') as f:
+            json.dump(payload, f)
+
         return jsonify({
             'status': 'success',
-            'data': {
-                'date': date,
-                'districts': district_risks,
-                'summary': {
-                    'total_districts': len(district_risks),
-                    'high_risk_districts': high_count,
-                    'medium_risk_districts': medium_count,
-                    'low_risk_districts': low_count
-                }
-            }
+            'data': payload,
+            'cached': False
         }), 200
 
     except Exception as e:
@@ -189,6 +212,25 @@ def get_city_heatmap():
                 'message': f'No cities found for district: {district}'
             }), 404
 
+        date_str = pred_date.strftime('%Y-%m-%d')
+        regenerate = request.args.get('regenerate', 'false').lower() == 'true'
+
+        # Cache per district+date — city predictions can be expensive
+        import json
+        cities_cache_dir = os.path.join(MODELS_DIR, 'cities')
+        os.makedirs(cities_cache_dir, exist_ok=True)
+        safe_district = district.replace(' ', '_').replace('/', '_')
+        cache_path = os.path.join(cities_cache_dir, f'city_risk_{safe_district}_{date_str}.json')
+
+        if not regenerate and os.path.exists(cache_path):
+            with open(cache_path, 'r') as f:
+                cached = json.load(f)
+            return jsonify({
+                'status': 'success',
+                'data': cached,
+                'cached': True
+            }), 200
+
         print(f"Generating city-level heatmap for {district} ({len(cities)} cities)...")
 
         # Predict for each city
@@ -203,8 +245,9 @@ def get_city_heatmap():
             lat = city['center_lat']
             lng = city['center_lng']
 
-            # Run prediction
-            result = predictor.predict(lat, lng, pred_date)
+            # Run prediction — pass string not datetime; feature_extractor
+            # expects strptime-parseable string.
+            result = predictor.predict(lat, lng, date_str)
 
             if result:
                 # Get geometry
@@ -237,19 +280,25 @@ def get_city_heatmap():
 
         print(f"✓ Generated predictions for {len(city_predictions)} cities")
 
+        payload = {
+            'district': district,
+            'date': date_str,
+            'total_cities': len(city_predictions),
+            'cities': city_predictions,
+            'summary': {
+                'high_risk_cities': high_risk,
+                'medium_risk_cities': medium_risk,
+                'low_risk_cities': low_risk
+            }
+        }
+
+        with open(cache_path, 'w') as f:
+            json.dump(payload, f)
+
         return jsonify({
             'status': 'success',
-            'data': {
-                'district': district,
-                'date': pred_date.strftime('%Y-%m-%d'),
-                'total_cities': len(city_predictions),
-                'cities': city_predictions,
-                'summary': {
-                    'high_risk_cities': high_risk,
-                    'medium_risk_cities': medium_risk,
-                    'low_risk_cities': low_risk
-                }
-            }
+            'data': payload,
+            'cached': False
         }), 200
 
     except Exception as e:
