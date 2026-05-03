@@ -130,7 +130,7 @@ def get_conflict_stats():
             if end_date:
                 df = df[df['Date'] <= pd.to_datetime(end_date) + pd.Timedelta(days=1) - pd.Timedelta(seconds=1)]
 
-        # Assign district and apply filter (mirrors /conflicts logic)
+        # Assign district column via lat/lon reverse-geocoding
         lat_col = 'latitude' if 'latitude' in df.columns else ('Latitude' if 'Latitude' in df.columns else None)
         lon_col = 'longitude' if 'longitude' in df.columns else ('Longitude' if 'Longitude' in df.columns else None)
 
@@ -141,6 +141,7 @@ def get_conflict_stats():
                 axis=1
             )
 
+        # Apply district filter
         if district and 'District' in df.columns:
             df = df[df['District'].str.lower() == district.strip().lower()]
 
@@ -165,11 +166,15 @@ def get_conflict_stats():
             months = max(1, date_range / 30)
             avg_per_month = round(total_conflicts / months, 1)
 
-        # Count unique districts if available
+        # Unique districts and breakdown after filter
         districts_affected = 0
         by_district = {}
+        if 'District' in df.columns and len(df) > 0:
+            districts_affected = int(df['District'].nunique())
+            district_counts = df.groupby('District').size().sort_values(ascending=False)
+            by_district = {k: int(v) for k, v in district_counts.items()}
 
-        print(f"✓ Stats calculated: {total_conflicts} conflicts, {len(monthly_data)} months")
+        print(f"✓ Stats calculated: {total_conflicts} conflicts, {len(monthly_data)} months, {districts_affected} districts")
 
         return success_response({
             'total_conflicts': total_conflicts,
