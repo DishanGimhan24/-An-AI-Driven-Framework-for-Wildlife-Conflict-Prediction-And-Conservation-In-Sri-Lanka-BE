@@ -3,5 +3,14 @@
         "activityBar.background": "#103506",
         "titleBar.activeBackground": "#164A09",
         "titleBar.activeForeground": "#F1FDEE"
+    },
+    "typescript.tsserver.exclude": [
+        "**/node_modules/**"
+    ],
+    "javascript.tsserver.exclude": [
+        "**/node_modules/**"
+    ],
+    "search.exclude": {
+        "**/node_modules": true
     }
 }
