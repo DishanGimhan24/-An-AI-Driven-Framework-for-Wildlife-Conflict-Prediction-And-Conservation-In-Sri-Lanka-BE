@@ -33,7 +33,10 @@ class DataLoader:
         self.roads = None
         self.railways = None
         self.rainfall_data = None
+        self.rainfall_data_raw = None  # Per-grid-point daily data (retains LAT, LON)
         self.ndvi_files = {}  # Store NDVI file paths by year-month
+        self._ndvi_raster_cache = {}  # Cache raster bands in memory: key → (band, transform, nodata, h, w)
+        self._monthly_rainfall_avg = {}  # Climatological monthly averages for out-of-range dates
         self.tracking_data = None
         self.city_loader = CityLoader(GADM_GEOJSON_PATH, CITY_CACHE_PATH)
 
@@ -237,14 +240,36 @@ class DataLoader:
         if dfs:
             all_data = pd.concat(dfs, ignore_index=True)
 
+            # Keep raw per-grid-point data for spatial rainfall queries (eco stress feature)
+            self.rainfall_data_raw = all_data.sort_values('date').reset_index(drop=True)
+
             # Aggregate by date (average across all grid points for Sri Lanka)
             self.rainfall_data = all_data.groupby('date', as_index=False).agg({
                 'rainfall_mm': 'mean'  # Average rainfall across all locations
             })
 
             self.rainfall_data = self.rainfall_data.sort_values('date').reset_index(drop=True)
+            self._monthly_rainfall_avg = self._compute_monthly_rainfall_averages()
         else:
             print(f"⚠ No rainfall data loaded")
+
+    def _compute_monthly_rainfall_averages(self):
+        """Build per-month climatological averages from loaded data for out-of-range date fallback."""
+        if self.rainfall_data is None or len(self.rainfall_data) == 0:
+            return {}
+        df = self.rainfall_data.copy()
+        df['month'] = df['date'].dt.month
+        daily_avg = df.groupby('month')['rainfall_mm'].mean()
+        result = {}
+        for m in range(1, 13):
+            avg_daily = float(daily_avg.get(m, 0.0))
+            result[m] = {
+                'rainfall_7day': avg_daily * 7,
+                'rainfall_14day': avg_daily * 14,
+                'rainfall_30day': avg_daily * 30,
+                'is_dry_period': 1 if avg_daily * 7 < 5.0 else 0
+            }
+        return result
 
     def load_ndvi_files(self):
         """Map NDVI .tif files by year-month for quick access"""
@@ -258,15 +283,28 @@ class DataLoader:
             print(f"⚠ No NDVI .tif files found")
             return
 
-        # Parse filenames like: NDVI_SriLanka_2023_03.tif
+        # Parse filenames in two formats:
+        #   Old: NDVI_SriLanka_2020-01.tif  (year-month joined with hyphen in last part)
+        #   New: NDVI_SriLanka_2023_03.tif  (year and month as separate underscore parts)
         for tif_file in tif_files:
             try:
-                parts = tif_file.replace('.tif', '').split('_')
-                if len(parts) >= 4:
-                    year = int(parts[2])
-                    month = int(parts[3])
-                    key = f"{year}-{month:02d}"
-                    self.ndvi_files[key] = os.path.join(NDVI_DIR, tif_file)
+                stem = tif_file.replace('.tif', '')
+                parts = stem.split('_')
+                if len(parts) < 3:
+                    continue
+                last = parts[-1]
+                second_last = parts[-2]
+                if '-' in last:
+                    # Old format: last part is "2020-01"
+                    year_str, month_str = last.split('-', 1)
+                    year, month = int(year_str), int(month_str)
+                elif second_last.isdigit():
+                    # New format: second-last is year, last is month
+                    year, month = int(second_last), int(last)
+                else:
+                    continue
+                key = f"{year}-{month:02d}"
+                self.ndvi_files[key] = os.path.join(NDVI_DIR, tif_file)
             except:
                 continue
 
@@ -336,37 +374,44 @@ class DataLoader:
         key = f"{year}-{month:02d}"
 
         if key not in self.ndvi_files:
-            # Return default if file not available
-            return 0.4
+            # Fallback: use the same calendar month from the most recent available year.
+            # This preserves seasonal NDVI variation for future/out-of-range dates.
+            same_month_keys = [k for k in self.ndvi_files if k.endswith(f'-{month:02d}')]
+            if same_month_keys:
+                key = max(same_month_keys)
+            elif self.ndvi_files:
+                key = max(self.ndvi_files.keys())
+            else:
+                return 0.4
 
         try:
-            raster_path = self.ndvi_files[key]
-            with rasterio.open(raster_path) as src:
-                # Get row, col from coordinates
-                row, col = src.index(lon, lat)
+            # Cache the full raster band in memory so subsequent calls (e.g.
+            # for 25 districts) don't re-open and re-read the same TIF file.
+            if key not in self._ndvi_raster_cache:
+                with rasterio.open(self.ndvi_files[key]) as src:
+                    self._ndvi_raster_cache[key] = (
+                        src.read(1), src.transform, src.nodata, src.height, src.width
+                    )
 
-                # Check if within bounds
-                if 0 <= row < src.height and 0 <= col < src.width:
-                    value = src.read(1)[row, col]
+            band, transform, nodata, height, width = self._ndvi_raster_cache[key]
 
-                    # Handle nodata values
-                    if value == src.nodata or np.isnan(value) or value < -1:
-                        return 0.4
+            from rasterio.transform import rowcol
+            row, col = rowcol(transform, lon, lat)
 
-                    # NDVI is typically stored as scaled integer (e.g., 0-10000)
-                    # Convert to standard NDVI range (-1 to 1)
-                    if value > 1:
-                        # Likely scaled by 10000
-                        value = value / 10000.0
+            if 0 <= row < height and 0 <= col < width:
+                value = band[row, col]
 
-                    # Clip to valid NDVI range
-                    value = np.clip(value, -1.0, 1.0)
-
-                    return float(value)
-                else:
+                if value == nodata or np.isnan(value) or value < -1:
                     return 0.4
-        except Exception as e:
-            # Return default on error
+
+                if value > 1:
+                    value = value / 10000.0
+
+                value = np.clip(value, -1.0, 1.0)
+                return float(value)
+            else:
+                return 0.4
+        except Exception:
             return 0.4
 
     def get_rainfall_for_date(self, target_date, days_back=30):
@@ -396,6 +441,17 @@ class DataLoader:
         rainfall_7day = df.loc[mask_7, 'rainfall_mm'].sum() if mask_7.any() else 0.0
         rainfall_14day = df.loc[mask_14, 'rainfall_mm'].sum() if mask_14.any() else 0.0
         rainfall_30day = df.loc[mask_30, 'rainfall_mm'].sum() if mask_30.any() else 0.0
+
+        # No data found for this date range (future or pre-data dates) — use
+        # climatological monthly average so seasonal variation is preserved.
+        if not mask_30.any() and self._monthly_rainfall_avg:
+            month = target_date.month
+            return self._monthly_rainfall_avg.get(month, {
+                'rainfall_7day': 0.0,
+                'rainfall_14day': 0.0,
+                'rainfall_30day': 0.0,
+                'is_dry_period': 1
+            })
 
         # Determine if dry period (less than 5mm in last 7 days)
         is_dry_period = 1 if rainfall_7day < 5.0 else 0

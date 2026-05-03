@@ -3,7 +3,9 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from concurrent.futures import ThreadPoolExecutor
 from data.risk_zones import get_risk_level_for_location
+from ml.predictor import predictor
 
 # Sri Lanka districts with representative coordinates
 DISTRICTS = {
@@ -36,18 +38,39 @@ DISTRICTS = {
 
 
 def get_district_risk_levels(date):
-    """Get risk level for each district"""
-    district_risks = []
+    """Get risk level for each district on the given date.
 
-    for district_name, coords in DISTRICTS.items():
-        result = get_risk_level_for_location(coords['lat'], coords['lon'])
+    Uses the trained ML predictor so that risk varies with season, rainfall,
+    NDVI, etc. Falls back to the static geographic zone lookup if a
+    prediction fails for a district.
 
-        district_risks.append({
+    Districts are predicted in parallel because each is independent and the
+    bottleneck is I/O (shapefile distance queries, raster reads) that releases
+    the GIL, so threads give a real speedup.
+    """
+    def _predict_one(item):
+        district_name, coords = item
+        result = predictor.predict(coords['lat'], coords['lon'], date)
+
+        if result is None:
+            fallback = get_risk_level_for_location(coords['lat'], coords['lon'])
+            return {
+                'district': district_name,
+                'risk_level': fallback['risk_level'],
+                'risk_score': fallback['risk_score'],
+                'zone_name': fallback['zone_name'],
+                'coordinates': coords
+            }
+
+        return {
             'district': district_name,
             'risk_level': result['risk_level'],
-            'risk_score': result['risk_score'],
-            'zone_name': result['zone_name'],
+            'risk_score': round(float(result['risk_score']), 3),
+            'zone_name': district_name,
             'coordinates': coords
-        })
+        }
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        district_risks = list(pool.map(_predict_one, DISTRICTS.items()))
 
     return district_risks

@@ -20,6 +20,11 @@ class FeatureExtractor:
 
     def __init__(self):
         self.data_loader = data_loader
+        # Rainfall and days_since_rain depend only on date, not location.
+        # Cache them so batch calls (e.g. 25 districts on the same date)
+        # don't repeat the same DataFrame scans 25 times.
+        self._rainfall_cache: dict = {}
+        self._days_since_rain_cache: dict = {}
 
     def extract_features(self, latitude, longitude, date_str):
         """
@@ -140,15 +145,22 @@ class FeatureExtractor:
         """Extract environmental features (rainfall, NDVI)"""
         features = {}
 
-        # Rainfall features from actual data
-        rainfall_info = self.data_loader.get_rainfall_for_date(date_obj, days_back=30)
+        date_key = date_obj.strftime('%Y-%m-%d')
+
+        # Rainfall and days_since_rain are date-only — cache so batch district
+        # calls sharing the same date don't repeat identical DataFrame scans.
+        if date_key not in self._rainfall_cache:
+            self._rainfall_cache[date_key] = self.data_loader.get_rainfall_for_date(date_obj, days_back=30)
+        rainfall_info = self._rainfall_cache[date_key]
+
         features['rainfall_7day'] = rainfall_info['rainfall_7day']
         features['rainfall_14day'] = rainfall_info['rainfall_14day']
         features['rainfall_30day'] = rainfall_info['rainfall_30day']
         features['is_dry_period'] = rainfall_info['is_dry_period']
 
-        # Calculate days since significant rain
-        features['days_since_rain'] = self._calculate_days_since_rain(date_obj)
+        if date_key not in self._days_since_rain_cache:
+            self._days_since_rain_cache[date_key] = self._calculate_days_since_rain(date_obj)
+        features['days_since_rain'] = self._days_since_rain_cache[date_key]
 
         # NDVI features from actual raster files
         year = date_obj.year
@@ -186,6 +198,13 @@ class FeatureExtractor:
 
         df = self.data_loader.rainfall_data
         target_date = pd.to_datetime(target_date)
+
+        # For dates well beyond the data range use a seasonal heuristic so
+        # future dates aren't penalised with a spurious 60-day dry streak.
+        max_data_date = df['date'].max()
+        if target_date > max_data_date + pd.Timedelta(days=60):
+            month = target_date.month
+            return 14 if 5 <= month <= 9 else 5  # dry season vs wet season
 
         # Filter dates before target
         past_data = df[df['date'] < target_date].sort_values('date', ascending=False)
