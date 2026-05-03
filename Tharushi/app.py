@@ -93,4 +93,4 @@ if __name__ == '__main__':
 
     # Run Flask app
     print(f"Starting Flask server on {FLASK_HOST}:{FLASK_PORT}")
-    app.run(host=FLASK_HOST, port=FLASK_PORT, debug=DEBUG)
+    app.run(host=FLASK_HOST, port=FLASK_PORT, debug=DEBUG, use_reloader=False)
