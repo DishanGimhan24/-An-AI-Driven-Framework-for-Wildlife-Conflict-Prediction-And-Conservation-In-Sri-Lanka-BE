@@ -6,6 +6,10 @@ import warnings
 # Suppress shapely warnings about invalid geometries
 warnings.filterwarnings('ignore', message='invalid value encountered in distance')
 
+# Cache UTM reprojections keyed by GDF object id — avoids re-projecting
+# the same large shapefile on every per-district or per-city call.
+_utm_cache: dict = {}
+
 
 def calculate_distance_to_nearest(point_lat, point_lon, gdf):
     """
@@ -21,9 +25,15 @@ def calculate_distance_to_nearest(point_lat, point_lon, gdf):
         if gdf.crs is None:
             gdf = gdf.set_crs("EPSG:4326")
 
-        # Reproject to UTM for accurate distance calculation
+        # Reproject to UTM for accurate distance calculation — cache the
+        # reprojected GDF by object identity so large shapefiles are only
+        # reprojected once per server lifetime, not once per prediction call.
+        gdf_id = id(gdf)
+        if gdf_id not in _utm_cache:
+            _utm_cache[gdf_id] = gdf.to_crs("EPSG:32644")
+        gdf_utm = _utm_cache[gdf_id]
+
         point_utm = point_gdf.to_crs("EPSG:32644")  # UTM Zone 44N for Sri Lanka
-        gdf_utm = gdf.to_crs("EPSG:32644")
 
         # Calculate distances
         distances = gdf_utm.geometry.distance(point_utm.geometry.iloc[0])

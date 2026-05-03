@@ -36,7 +36,7 @@ METRICS_PATH = os.path.join(MODELS_DIR, 'model_metrics.json')
 # Flask config
 FLASK_HOST = '0.0.0.0'
 FLASK_PORT = 5001
-DEBUG = True
+DEBUG = False
 
 # ML config
 RANDOM_STATE = 42

@@ -16,6 +16,7 @@ from api.forecast import forecast_bp
 from api.predict import predict_bp
 from api.stats import stats_bp
 from api.historical import historical_bp
+from api.environmental_stress import env_stress_bp
 from config import FLASK_HOST, FLASK_PORT, DEBUG
 from data_processing.data_loader import data_loader
 from ml.model_loader import model_loader
@@ -42,6 +43,7 @@ app.register_blueprint(forecast_bp, url_prefix='/api')
 app.register_blueprint(heatmap_bp, url_prefix='/api')
 app.register_blueprint(stats_bp, url_prefix='/api')
 app.register_blueprint(cities_bp, url_prefix='/api')
+app.register_blueprint(env_stress_bp, url_prefix='/api')
 
 
 @app.route('/')
@@ -91,4 +93,4 @@ if __name__ == '__main__':
 
     # Run Flask app
     print(f"Starting Flask server on {FLASK_HOST}:{FLASK_PORT}")
-    app.run(host=FLASK_HOST, port=FLASK_PORT, debug=DEBUG)
+    app.run(host=FLASK_HOST, port=FLASK_PORT, debug=DEBUG, use_reloader=False)
