@@ -46,8 +46,6 @@ def start_services():
         proc = subprocess.Popen(
             svc["cmd"],
             cwd=svc["cwd"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
         )
         processes.append((svc["name"], proc))
         time.sleep(1)
